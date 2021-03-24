@@ -23,44 +23,6 @@
         app:layout_constraintGuide_percent="0.1" />
 
 
-    <soup.neumorphism.NeumorphCardView
-        android:id="@+id/neumorphCardView"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline"
-        app:neumorph_insetBottom="0dp"
-        app:neumorph_insetEnd="0dp"
-        app:neumorph_insetStart="0dp"
-        app:neumorph_insetTop="16dp">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.4" >
-
-                <RadioButton
-                    android:id="@+id/plan_bottom"
-                    style="@style/tab_menu_item"
-                    android:checked="true"
-                    android:drawableTop="@drawable/plan"
-                    android:text="@string/plan" />
-            </RadioGroup>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </soup.neumorphism.NeumorphCardView>
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
         android:layout_width="wrap_content"
@@ -88,6 +50,50 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.65" />
+
+    <soup.neumorphism.NeumorphCardView
+        android:id="@+id/neumorphCardView"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:neumorph_insetBottom="0dp"
+        app:neumorph_insetEnd="0dp"
+        app:neumorph_insetStart="0dp"
+        app:neumorph_insetTop="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioGroup
+                android:id="@+id/bottom_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:checkedButton="@id/plan_bottom"
+                android:contextClickable="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.33">
+
+                <RadioButton
+                    android:id="@+id/plan_bottom"
+                    style="@style/tab_menu_item"
+                    android:checked="true"
+                    android:drawableTop="@drawable/plan"
+                    android:text="@string/plan" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </soup.neumorphism.NeumorphCardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
