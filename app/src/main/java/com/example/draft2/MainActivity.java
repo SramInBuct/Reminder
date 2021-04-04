@@ -2,22 +2,28 @@ package com.example.draft2;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.motion.widget.MotionLayout;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
-    private NavController navController;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        navShow();
+    }
+
+    private NavController navController;
+    void navShow(){
         navController = Navigation.findNavController(this,R.id.fragment);
         MotionLayout mine = findViewById(R.id.motionLayoutMine);
-//        MotionLayout plan = findViewById(R.id.motionLayoutPlan);
         Button plan=findViewById(R.id.button);
         MotionLayout study = findViewById(R.id.motionLayoutStudy);
         MotionLayout classtable = findViewById(R.id.motionLayoutClasstable);
@@ -30,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
             controller.popBackStack();
             mine.setProgress(0f);
-//            plan.setProgress(0f);
             study.setProgress(0f);
             classtable.setProgress(0f);
             chart.setProgress(0f);
@@ -43,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
             else if (destination.getId()==R.id.classtableFragment) {
                 classtable.transitionToEnd();
             }
-//            else if (destination.getId()==R.id.planFragment) plan.transitionToEnd();
             else if (destination.getId()==R.id.chartFragment) {
                 chart.transitionToEnd();
             }
