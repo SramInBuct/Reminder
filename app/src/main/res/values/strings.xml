@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Reminder</string>
-    <string name="plan">jihua</string>
+    <string name="mine">我的</string>
+    <string name="classtable">课程表</string>
+    <string name="plan">计划</string>
+    <string name="study">学习</string>
+    <string name="chart">统计</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
