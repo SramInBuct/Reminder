@@ -1,4 +1,4 @@
-package com.example.draft2;
+package com.example.reminder;
 
 import org.junit.Test;
 
