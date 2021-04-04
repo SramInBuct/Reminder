@@ -1,4 +1,4 @@
-package com.example.draft2;
+package com.example.reminder.fragment;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.example.reminder.R;
 
 import java.util.List;
 

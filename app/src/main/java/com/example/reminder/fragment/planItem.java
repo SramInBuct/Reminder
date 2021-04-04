@@ -1,6 +1,4 @@
-package com.example.draft2;
-
-import java.sql.Time;
+package com.example.reminder.fragment;
 
 public class planItem {
     private String planText;
