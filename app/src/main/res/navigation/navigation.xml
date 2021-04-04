@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/planFragment">
+
+    <fragment
+        android:id="@+id/classtableFragment"
+        android:name="com.example.draft2.classtableFragment"
+        android:label="fragment_classtable"
+        tools:layout="@layout/fragment_classtable" />
+    <fragment
+        android:id="@+id/planFragment"
+        android:name="com.example.draft2.planFragment"
+        android:label="fragment_plan"
+        tools:layout="@layout/fragment_plan" />
+    <fragment
+        android:id="@+id/studyFragment"
+        android:name="com.example.draft2.studyFragment"
+        android:label="fragment_study"
+        tools:layout="@layout/fragment_study" />
+    <fragment
+        android:id="@+id/mineFragment"
+        android:name="com.example.draft2.mineFragment"
+        android:label="fragment_mine"
+        tools:layout="@layout/fragment_mine" />
+    <fragment
+        android:id="@+id/chartFragment"
+        android:name="com.example.draft2.chartFragment"
+        android:label="fragment_chart"
+        tools:layout="@layout/fragment_chart" />
+</navigation>
