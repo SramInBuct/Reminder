@@ -1,4 +1,4 @@
-package com.example.reminder;
+package com.example.reminder.fragment;
 
 import android.os.Bundle;
 
@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.reminder.R;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link mineFragment#newInstance} factory method to
+ * Use the {@link planFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class mineFragment extends Fragment {
+public class planFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +26,7 @@ public class mineFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public mineFragment() {
+    public planFragment() {
         // Required empty public constructor
     }
 
@@ -34,11 +36,11 @@ public class mineFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment mineFragment.
+     * @return A new instance of fragment planFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static mineFragment newInstance(String param1, String param2) {
-        mineFragment fragment = new mineFragment();
+    public static planFragment newInstance(String param1, String param2) {
+        planFragment fragment = new planFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,6 +61,6 @@ public class mineFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mine, container, false);
+        return inflater.inflate(R.layout.fragment_plan, container, false);
     }
 }
