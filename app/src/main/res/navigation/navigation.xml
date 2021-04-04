@@ -7,27 +7,27 @@
 
     <fragment
         android:id="@+id/classtableFragment"
-        android:name="com.example.draft2.classtableFragment"
+        android:name="com.example.reminder.fragment.classtableFragment"
         android:label="fragment_classtable"
         tools:layout="@layout/fragment_classtable" />
     <fragment
         android:id="@+id/planFragment"
-        android:name="com.example.draft2.planFragment"
+        android:name="com.example.reminder.fragment.planFragment"
         android:label="fragment_plan"
         tools:layout="@layout/fragment_plan" />
     <fragment
         android:id="@+id/studyFragment"
-        android:name="com.example.draft2.studyFragment"
+        android:name="com.example.reminder.fragment.studyFragment"
         android:label="fragment_study"
         tools:layout="@layout/fragment_study" />
     <fragment
         android:id="@+id/mineFragment"
-        android:name="com.example.draft2.mineFragment"
+        android:name="com.example.reminder.fragment.mineFragment"
         android:label="fragment_mine"
         tools:layout="@layout/fragment_mine" />
     <fragment
         android:id="@+id/chartFragment"
-        android:name="com.example.draft2.chartFragment"
+        android:name="com.example.reminder.fragment.chartFragment"
         android:label="fragment_chart"
         tools:layout="@layout/fragment_chart" />
 </navigation>
