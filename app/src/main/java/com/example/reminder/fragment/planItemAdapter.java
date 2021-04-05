@@ -30,7 +30,9 @@ public class planItemAdapter extends ArrayAdapter<planItem> {
         planItem planItem=getItem(position);
         @SuppressLint("ViewHolder") View view= LayoutInflater.from(getContext()).inflate(resourceId,parent,false);
         ImageView planImage=(ImageView)view.findViewById(R.id.planImageView);
+        planImage.setImageResource(planItem.getItemId());
         TextView planText=view.findViewById(R.id.planText);
+        planText.setText(planItem.getPlanText());
         return view;
     }
 }

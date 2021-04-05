@@ -23,7 +23,6 @@ public class planFragment extends Fragment {
         initPlan();
         planItemAdapter adapter=new planItemAdapter(getActivity(), R.layout.plan_item_layout,planList);
         ListView listView=(ListView) view.findViewById(R.id.plan_list_view);
-
         listView.setAdapter(adapter);
         return view;
     }
