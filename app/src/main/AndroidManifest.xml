@@ -21,6 +21,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:theme="@style/Theme.AppCompat.Dialog"
+            android:name=".fragment.informationInputActivity">
+            <intent-filter>
+                <action android:name=".fragment.action.informationInputActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
