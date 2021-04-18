@@ -22,6 +22,7 @@ public class EventDao {
     public static ArrayList<Event> findAll(){
         ArrayList<Event> arrayList= new ArrayList<Event>();
         arrayList.addAll(LitePal.findAll(Event.class));
+        Log.d(TAG, "findAll ");
         return arrayList;
     }
 
@@ -38,8 +39,12 @@ public class EventDao {
     public static void delete(Integer id){
         Log.d(TAG, "delete: "+LitePal.find(Event.class,id));
         LitePal.delete(Event.class,id);
-
     }
+    public static void deleteAll(){
+        Log.d(TAG, "deleteAll");
+        LitePal.deleteAll(Event.class);
+    }
+
     public static void update(Event event,Integer id){
         Log.d(TAG, "update: "+LitePal.find(Event.class,id));
         event.updateAll("id = ? ",id.toString());
