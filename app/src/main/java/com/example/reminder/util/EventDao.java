@@ -9,7 +9,9 @@ import com.example.reminder.entities.Event;
 
 import org.litepal.LitePal;
 
-public class EventDao<T> {
+import java.util.ArrayList;
+
+public class EventDao {
 
     public static final String TAG = "EventDao";
 
@@ -17,8 +19,10 @@ public class EventDao<T> {
     }
 
 
-    public static void find(){
-        LitePal.findAll(Event.class);
+    public static ArrayList<Event> findAll(){
+        ArrayList<Event> arrayList= new ArrayList<Event>();
+        arrayList.addAll(LitePal.findAll(Event.class));
+        return arrayList;
     }
 
     public static Event find(Integer id){

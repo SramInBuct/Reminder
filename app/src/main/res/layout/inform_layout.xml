@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:float="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/Background"
+    android:backgroundTint="@color/Background">
+
+    <EditText
+        android:id="@+id/inputTitle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/stroke_style"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:hint="@string/todoName"
+        android:inputType="textPersonName"
+        float:layout_constraintBottom_toTopOf="@+id/guideline9"
+        float:layout_constraintEnd_toEndOf="parent"
+        float:layout_constraintStart_toStartOf="parent"
+        float:layout_constraintTop_toTopOf="@+id/guideline11" />
+
+    <EditText
+        android:id="@+id/inputDetails"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/stroke_style"
+        android:gravity="center"
+        android:hint="@string/details"
+        android:inputType="textMultiLine"
+        float:layout_constraintBottom_toTopOf="@+id/guideline10"
+        float:layout_constraintEnd_toEndOf="parent"
+        float:layout_constraintStart_toStartOf="parent"
+        float:layout_constraintTop_toTopOf="@+id/guideline9" />
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        android:text="取消"
+        android:textSize="18sp"
+        float:cornerRadius="6dp"
+        float:layout_constraintBottom_toTopOf="@+id/guideline8"
+        float:layout_constraintEnd_toStartOf="@+id/btn_ok"
+        float:layout_constraintHorizontal_bias="0.5"
+        float:layout_constraintStart_toStartOf="parent"
+        float:layout_constraintTop_toTopOf="@+id/guideline10" />
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp"
+        android:text="确定"
+        android:textSize="18sp"
+        float:cornerRadius="6dp"
+        float:layout_constraintBottom_toTopOf="@+id/guideline8"
+        float:layout_constraintEnd_toEndOf="parent"
+        float:layout_constraintHorizontal_bias="0.5"
+        float:layout_constraintStart_toEndOf="@+id/btn_cancel"
+        float:layout_constraintTop_toTopOf="@+id/guideline10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        float:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        float:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        float:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        float:layout_constraintGuide_percent="0.15" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="@dimen/margin4"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="@dimen/margin4"
+        android:background="@drawable/full_style"
+        android:gravity="center"
+        android:text="@string/InfromHead"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        float:layout_constraintBottom_toTopOf="@+id/guideline11"
+        float:layout_constraintEnd_toEndOf="parent"
+        float:layout_constraintStart_toStartOf="parent"
+        float:layout_constraintTop_toTopOf="parent" />
+
+    <!--    <View-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="1dp"-->
+    <!--        android:background="@color/purple_200" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

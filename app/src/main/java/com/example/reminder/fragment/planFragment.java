@@ -1,62 +1,78 @@
 package com.example.reminder.fragment;
 
-import android.app.Dialog;
-import android.content.Context;
+import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.example.reminder.R;
+import com.example.reminder.entities.Event;
+import com.example.reminder.planHandle.informActivity;
+import com.example.reminder.planHandle.planItem;
+import com.example.reminder.planHandle.planItemAdapter;
+import com.example.reminder.util.EventDao;
 
+import java.sql.Time;
+import java.time.Instant;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-import static android.content.ContentValues.TAG;
-
 public class planFragment extends Fragment {
-    private static List<planItem> planList=new ArrayList<>();
+    private static List<Event> planList=new ArrayList<>();
+    private View view;
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view= inflater.inflate(R.layout.fragment_plan , container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        view= inflater.inflate(R.layout.fragment_plan , container, false);
+        loadDate();
         showListView(view);
         showDialog(view);
         return view;
     }
 
     private void showListView(View view) {
-        planItemAdapter adapter=new planItemAdapter(getActivity(), R.layout.plan_item_layout,planList);
+        planItemAdapter adapter=new planItemAdapter(getActivity(), R.layout.item_plan,planList);
         ListView listView=(ListView) view.findViewById(R.id.plan_list_view);
         listView.setAdapter(adapter);
     }
 
+    public void loadDate(){
+        planList=EventDao.findAll();
+    }
 
     private void showDialog(View view) {
         ImageButton inputButton=view.findViewById(R.id.inputButton);
-//        Dialog dialog=new Dialog(getActivity());
-//        dialog.setContentView(R.layout.information_input_layout);
         inputButton.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceType")
             @Override
             public void onClick(View v) {
-                Intent in=new Intent(".fragment.action.informationInputActivity");
-                startActivity(in);
+                Intent intent=new Intent(getActivity(), informActivity.class);
+                startActivity(intent);
             }
         });
     }
 
-    public static void AddPlan (String value) {
-        planList.add(new planItem(value,R.drawable.ic_add_stroke));
+
+    public static void addList(String title, String details, Date date, Integer icon_id){
+        Event event=new Event();
+        event.setName(title);
+        event.setDescribe(details);
+        event.setBeginDate(date);
+        planList.add(event);
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        showListView(view);
+    }
+
 }

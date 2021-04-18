@@ -42,14 +42,14 @@
             android:orientation="horizontal">
 
             <include
-                layout="@layout/classtable_icon_layout"
+                layout="@layout/icon_classtable"
                 android:layout_width="24dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="6dp"
                 android:layout_weight="1" />
 
             <include
-                layout="@layout/chart_icon_layout"
+                layout="@layout/icon_chart"
                 android:layout_width="24dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -60,13 +60,13 @@
                 android:layout_weight="1" />
 
             <include
-                layout="@layout/study_icon_layout"
+                layout="@layout/icon_study"
                 android:layout_width="24dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
             <include
-                layout="@layout/mine_icon_layout"
+                layout="@layout/icon_mine"
                 android:layout_width="24dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="6dp"

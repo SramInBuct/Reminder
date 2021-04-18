@@ -16,19 +16,10 @@
         <service
             android:name="com.example.reminder.service.MasterService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
 
         //Main
         <activity android:name="com.example.reminder.MainActivity">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-        </activity>
-
-        //Test
-        <activity android:name=".text.TestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,11 +27,28 @@
             </intent-filter>
         </activity>
 
+        //Test
+        <activity android:name=".text.TestActivity">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+
         <activity
-            android:theme="@style/dialog"
-            android:name=".fragment.informationInputActivity">
+            android:name=".planHandle.informActivity">
             <intent-filter>
                 <action android:name=".fragment.action.informationInputActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".mineHandle.loginActivity">
+            <intent-filter>
+                <action android:name=".fragment.action.loginActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

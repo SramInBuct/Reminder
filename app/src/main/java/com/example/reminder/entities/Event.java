@@ -19,12 +19,27 @@ public class Event extends LitePalSupport {
     private Date LastTime;
     @Column(defaultValue = "CURRENT_TIMESTAMP")
     private Date EndDate;
-    private Integer Describe;
+    private String Describe;
     private String  Frequency;
     @Column(defaultValue ="1")
     private Integer Priority;
     @Column(nullable = false , defaultValue ="700060")
     private Integer Icon_id;
+
+    public Event(){
+    }
+
+    public Event(String name, Date beginTime, Date beginDate, Date lastTime, Date endDate, String describe, String frequency, Integer priority, Integer icon_id) {
+        Name = name;
+        BeginTime = beginTime;
+        BeginDate = beginDate;
+        LastTime = lastTime;
+        EndDate = endDate;
+        Describe = describe;
+        Frequency = frequency;
+        Priority = priority;
+        Icon_id = icon_id;
+    }
 
     public String getName() {
         return Name;
@@ -50,11 +65,11 @@ public class Event extends LitePalSupport {
         LastTime = lastTime;
     }
 
-    public Integer getDescribe() {
+    public String getDescribe() {
         return Describe;
     }
 
-    public void setDescribe(Integer describe) {
+    public void setDescribe(String describe) {
         Describe = describe;
     }
 

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/selectableItemBackgroundBorderless"
-    app:layoutDescription="@xml/mine_icon_layout_scene2">
+    app:layoutDescription="@xml/icon_animate">
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/imageView2"

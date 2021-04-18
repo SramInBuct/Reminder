@@ -9,14 +9,17 @@
         style="@style/ShapeAppearance.Neumorph.Button"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:padding="8dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:neumorph_backgroundColor="@color/white"
         app:neumorph_inset="8dp"
-        app:neumorph_shadowElevation="4dp">
+        app:neumorph_shadowElevation="6dp"
+        app:neumorph_strokeColor="@color/black"
+        app:neumorph_strokeWidth="1dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -41,25 +44,51 @@
 
             <TextView
                 android:id="@+id/planText"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="TextView"
-                android:textSize="24sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="4dp"
+                android:ellipsize="end"
+                android:ems="11"
+                android:maxEms="11"
+                android:maxLines="1"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/detailText"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
+                android:id="@+id/detailText"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:layout_weight="1"
-                android:text="TextView"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:ellipsize="end"
+                android:ems="16"
+                android:maxEms="16"
+                android:maxLines="1"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/timeText"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/planText"
-                app:layout_constraintTop_toBottomOf="@+id/planText"
-                app:layout_constraintVertical_bias="0.407" />
+                app:layout_constraintTop_toBottomOf="@+id/planText" />
+
+            <TextView
+                android:id="@+id/timeText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:ems="18"
+                android:maxEms="18"
+                android:maxLines="1"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toBottomOf="@+id/detailText" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </soup.neumorphism.NeumorphCardView>
