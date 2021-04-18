@@ -21,8 +21,19 @@ public class informationInputActivity extends AppCompatActivity {
         btn_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println(inputTitle.getText());
+                String title= String.valueOf(inputTitle.getText());
+                String details=String.valueOf(inputDetails.getText());
+                planFragment.AddPlan(title);
+                informationInputActivity.this.finish();
             }
         });
+        Button btn_cancel=findViewById(R.id.btn_cancel);
+        btn_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                informationInputActivity.this.finish();
+            }
+        });
+
     }
 }

@@ -43,13 +43,14 @@
 
             <include
                 layout="@layout/classtable_icon_layout"
-                android:layout_width="wrap_content"
+                android:layout_width="24dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
                 android:layout_weight="1" />
 
             <include
                 layout="@layout/chart_icon_layout"
-                android:layout_width="wrap_content"
+                android:layout_width="24dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
@@ -60,14 +61,15 @@
 
             <include
                 layout="@layout/study_icon_layout"
-                android:layout_width="wrap_content"
+                android:layout_width="24dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
             <include
                 layout="@layout/mine_icon_layout"
-                android:layout_width="wrap_content"
+                android:layout_width="24dp"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="6dp"
                 android:layout_weight="1" />
 
         </LinearLayout>
@@ -99,7 +101,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.97" />
+        app:layout_constraintGuide_percent="0.98" />
 
     <Button
         android:id="@+id/button"

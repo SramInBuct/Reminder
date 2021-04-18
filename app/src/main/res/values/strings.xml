@@ -9,4 +9,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="todoName">待办事项名称</string>
     <string name="details">具体事项</string>
+    <string name="SavedData">MyData</string>>
+    <string name="TitleInput">titleInput</string>
+    <string name="DetailsInput">detailsInput</string>
+    <string name="encourage">Dont miss any</string>
+    <string name="Events">Events!</string>
 </resources>

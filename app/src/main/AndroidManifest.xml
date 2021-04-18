@@ -37,7 +37,7 @@
         </activity>
 
         <activity
-            android:theme="@style/Theme.AppCompat.Dialog"
+            android:theme="@style/dialog"
             android:name=".fragment.informationInputActivity">
             <intent-filter>
                 <action android:name=".fragment.action.informationInputActivity" />

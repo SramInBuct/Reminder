@@ -22,8 +22,8 @@
         <Constraint
             android:id="@+id/imageView2"
             motion:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:layout_marginBottom="256dp"
             motion:layout_constraintBottom_toTopOf="@+id/textView3"
             motion:layout_constraintTop_toTopOf="parent"
@@ -53,8 +53,8 @@
         <Constraint
             android:id="@+id/imageView2"
             motion:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:layout_marginBottom="256dp"
             motion:layout_constraintBottom_toTopOf="@+id/textView3"
             motion:layout_constraintTop_toTopOf="parent"
@@ -64,7 +64,7 @@
                 motion:customFloatValue="1" />
             <CustomAttribute
                 motion:attributeName="colorFilter"
-                motion:customColorValue="@color/purple_200" />
+                motion:customColorValue="@color/button" />
         </Constraint>
         <Constraint
             android:id="@+id/TextViewMine"
@@ -76,7 +76,7 @@
             motion:layout_constraintStart_toStartOf="parent" >
             <CustomAttribute
                 motion:attributeName="textColor"
-                motion:customColorValue="@color/purple_200" />
+                motion:customColorValue="@color/button" />
         </Constraint>
     </ConstraintSet>
 </MotionScene>
