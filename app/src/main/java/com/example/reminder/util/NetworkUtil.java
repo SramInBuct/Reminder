@@ -1,9 +1,12 @@
 package com.example.reminder.util;
 
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Message;
+import android.os.SharedMemory;
 import android.util.Log;
 
+import com.example.reminder.entities.User;
 import com.example.reminder.entities.WeatherDays;
 import com.example.reminder.entities.WeatherIndices;
 import com.google.gson.Gson;
@@ -16,8 +19,11 @@ import java.io.IOException;
 
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 
@@ -30,6 +36,9 @@ public class NetworkUtil {
     private static String local ="101010100";
     private static String type="1";
 
+    /**
+     * GET方法
+     */
     public static void GetWeatherDays(Handler handler){
         OkHttpClient client = new OkHttpClient();
 
@@ -128,6 +137,96 @@ public class NetworkUtil {
                     handler.sendMessage(message);
                     Log.d(TAG, "onResponse--> Error");
                 }
+            }
+        });
+    }
+
+
+    /**
+     * POST方法
+     */
+    public static void postLogin(Handler handler,User user) throws JSONException {
+        OkHttpClient okHttpClient = new OkHttpClient();
+        JSONObject obj = new JSONObject();
+        MediaType JSON = MediaType.parse("application/json;charset=utf-8");
+        obj.put("mail",user.getMail());
+        obj.put("uuid",user.getUuid());
+        obj.put("password",user.getPassword());
+        RequestBody body =  RequestBody.create(JSON,String.valueOf(obj));
+
+        Request request = new Request.Builder()
+                .post(body)
+                .url("http://192.168.43.228:8668/api/user/login")
+                .build();
+        Call call = okHttpClient.newCall(request);
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Log.d(TAG,"onFailure-->"+e.toString());
+                Message message = Message.obtain();
+                message.what = 0;
+                message.obj = e.getMessage();
+                handler.sendMessage(message);
+                Log.d(TAG, "onResponse: " + message.obj.toString());
+            }
+
+            @Override
+            public void onResponse(Call call, okhttp3.Response response) throws IOException {
+                Message message = Message.obtain();
+                message.what = 2;
+
+                String result = response.body().string();//string不能调用两次 被调用一次就关闭了，这里调用两次会报异常
+                String token = null;
+                try {
+                    JSONObject js = new JSONObject(result);
+                    JSONObject msg = js.getJSONObject("msg");
+                    token = msg.getString("token");
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                message.obj = token;
+                handler.sendMessage(message);
+                Log.d(TAG, "onResponse->token: " + message.obj.toString());
+
+            }
+        });
+
+    }
+    public static void postRegister(Handler handler,User user) throws JSONException {
+        OkHttpClient okHttpClient = new OkHttpClient();
+        JSONObject obj = new JSONObject();
+        MediaType JSON = MediaType.parse("application/json;charset=utf-8");
+        obj.put("name",user.getName());
+        obj.put("mail",user.getMail());
+        obj.put("uuid",user.getUuid());
+        obj.put("password",user.getPassword());
+        RequestBody body =  RequestBody.create(JSON,String.valueOf(obj));
+
+        Request request = new Request.Builder()
+                .post(body)
+                .url("http://192.168.43.228:8668/api/user/register")
+                .build();
+        Call call = okHttpClient.newCall(request);
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Log.d(TAG,"onFailure-->"+e.toString());
+                Message message = Message.obtain();
+                message.what = 0;
+                message.obj = e.getMessage();
+                handler.sendMessage(message);
+                Log.d(TAG, "onResponse: " + message.obj.toString());
+            }
+
+            @Override
+            public void onResponse(Call call, okhttp3.Response response) throws IOException {
+                Message message = Message.obtain();
+                message.what = 2;
+                message.obj = response.body().string();//string不能调用两次 被调用一次就关闭了，这里调用两次会报异常
+                handler.sendMessage(message);
+                Log.d(TAG, "onResponse: " + message.obj.toString());
+
             }
         });
     }
