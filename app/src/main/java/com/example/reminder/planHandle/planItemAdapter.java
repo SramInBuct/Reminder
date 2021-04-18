@@ -30,7 +30,12 @@ public class planItemAdapter extends ArrayAdapter<Event> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         Event planItem=getItem(position);
-        @SuppressLint("ViewHolder") View view= LayoutInflater.from(getContext()).inflate(resourceId,parent,false);
+        @SuppressLint("ViewHolder") View view;
+        if(convertView==null){
+            view=LayoutInflater.from(getContext()).inflate(resourceId,parent,false);
+        }else{
+            view=convertView;
+        }
         ImageView planImage=(ImageView)view.findViewById(R.id.planImageView);
         planImage.setImageResource(R.drawable.ic_mine);
         TextView planText=view.findViewById(R.id.planText);
