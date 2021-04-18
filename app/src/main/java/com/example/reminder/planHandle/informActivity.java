@@ -40,7 +40,7 @@ public class informActivity extends AppCompatActivity {
                 event.setBeginDate(date);
                 event.setIcon_id(R.drawable.ic_mine);
                 EventDao.insert(event);
-                planFragment.addList(title,details,date,R.drawable.ic_mine);
+                planFragment.addList(event);
                 informActivity.this.finish();
             }
         });

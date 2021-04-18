@@ -29,15 +29,10 @@ public class planFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view= inflater.inflate(R.layout.fragment_plan , container, false);
+        loadDate();
         showListView(view);
         showDialog(view);
         return view;
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        loadDate();
     }
 
     private void showListView(View view) {
@@ -63,11 +58,7 @@ public class planFragment extends Fragment {
     }
 
 
-    public static void addList(String title, String details, Date date, Integer icon_id){
-        Event event=new Event();
-        event.setName(title);
-        event.setDescribe(details);
-        event.setBeginDate(date);
+    public static void addList(Event event){
         planList.add(event);
     }
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f0f0f0"
+    android:background="@color/Background"
     tools:context="com.example.reminder.MainActivity">
 
     <fragment
@@ -25,6 +25,7 @@
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/Background"
         app:cardCornerRadius="16dp"
         app:contentPaddingBottom="16dp"
         app:contentPaddingTop="6dp"

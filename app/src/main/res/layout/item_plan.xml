@@ -9,17 +9,17 @@
         style="@style/ShapeAppearance.Neumorph.Button"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:neumorph_backgroundColor="@color/white"
+        app:neumorph_backgroundColor="@color/Background"
         app:neumorph_inset="8dp"
-        app:neumorph_shadowElevation="6dp"
-        app:neumorph_strokeColor="@color/black"
-        app:neumorph_strokeWidth="1dp">
+        app:neumorph_shadowElevation="3dp">
+        <!--        app:neumorph_strokeColor="@color/black"-->
+        <!--        app:neumorph_strokeWidth="1dp">-->
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
