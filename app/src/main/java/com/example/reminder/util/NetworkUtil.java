@@ -26,16 +26,16 @@ public class NetworkUtil {
     public static final String BASE_URL="http://47.117.116.187";
     public static final String WEATHER=":8777";
     private static final String TAG ="OkHttpClient" ;
-    private static String date;
-    private static String local;
-    private static String type;
+    private static String date="2021-04-18";
+    private static String local ="101010100";
+    private static String type="1";
 
     public static void GetWeatherDays(Handler handler){
         OkHttpClient client = new OkHttpClient();
 
         Request request = new Request.Builder()
                 .get()
-                .url(BASE_URL+WEATHER+"/weather/days?loc="+101010100+"&date="+"2021-04-11")
+                .url(BASE_URL+WEATHER+"/weather/days?loc="+local+"&date="+date)
                 .build();
         //client创建任务
         Call call = client.newCall(request);
@@ -63,8 +63,9 @@ public class NetworkUtil {
                         Message message = new Message();
                         message.what=2;
                         message.obj=weatherDays;
-                        handler.sendMessage(message);
                         Log.d(TAG, "responseBody-->" + weatherDays.toString());
+                        handler.sendMessage(message);
+
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

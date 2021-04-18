@@ -1,20 +1,34 @@
 package com.example.reminder.entities;
 
-public class User {
+import org.litepal.annotation.Column;
+import org.litepal.crud.LitePalSupport;
 
+public class User extends LitePalSupport {
+
+    @Column(nullable = false)
     private String name;
-
+    @Column(nullable = false)
     private String uuid;
-
+    @Column(nullable = false)
     private String mail;
+    @Column(nullable = false)
+    private String token;
 
-    public User() {
-    }
-
-    public User(String name, String uuid, String mail) {
+    public User(String name, String uuid, String mail, String token) {
         this.name = name;
         this.uuid = uuid;
         this.mail = mail;
+        this.token = token;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", uuid='" + uuid + '\'' +
+                ", mail='" + mail + '\'' +
+                ", token='" + token + '\'' +
+                '}';
     }
 
     public String getName() {
@@ -41,12 +55,11 @@ public class User {
         this.mail = mail;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "name='" + name + '\'' +
-                ", uuid='" + uuid + '\'' +
-                ", mail='" + mail + '\'' +
-                '}';
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }
