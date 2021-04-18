@@ -38,6 +38,7 @@ public class informActivity extends AppCompatActivity {
                 event.setName(title);
                 event.setDescribe(details);
                 event.setBeginDate(date);
+                event.setIcon_id(R.drawable.ic_mine);
                 EventDao.insert(event);
                 planFragment.addList(title,details,date,R.drawable.ic_mine);
                 informActivity.this.finish();
