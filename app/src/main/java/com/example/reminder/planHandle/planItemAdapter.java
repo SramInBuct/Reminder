@@ -36,7 +36,7 @@ public class planItemAdapter extends ArrayAdapter<Event> {
             view=convertView;
         }
         ImageView planImage=(ImageView)view.findViewById(R.id.planImageView);
-        planImage.setImageResource(planItem.getIcon_id());
+        planImage.setImageResource(R.drawable.ic_mine);
         TextView planText=view.findViewById(R.id.planText);
         planText.setText(planItem.getName());
         TextView planDetails=view.findViewById(R.id.detailText);
