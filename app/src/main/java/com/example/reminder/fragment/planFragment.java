@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -15,13 +16,9 @@ import android.widget.ListView;
 import com.example.reminder.R;
 import com.example.reminder.entities.Event;
 import com.example.reminder.planHandle.informActivity;
-import com.example.reminder.planHandle.planItem;
 import com.example.reminder.planHandle.planItemAdapter;
 import com.example.reminder.util.EventDao;
 
-import java.sql.Time;
-import java.time.Instant;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -32,10 +29,15 @@ public class planFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view= inflater.inflate(R.layout.fragment_plan , container, false);
-        loadDate();
         showListView(view);
         showDialog(view);
         return view;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        loadDate();
     }
 
     private void showListView(View view) {

@@ -14,7 +14,6 @@ import androidx.annotation.Nullable;
 
 import com.example.reminder.R;
 import com.example.reminder.entities.Event;
-import com.example.reminder.planHandle.planItem;
 
 import java.util.List;
 
@@ -37,7 +36,7 @@ public class planItemAdapter extends ArrayAdapter<Event> {
             view=convertView;
         }
         ImageView planImage=(ImageView)view.findViewById(R.id.planImageView);
-        planImage.setImageResource(R.drawable.ic_mine);
+        planImage.setImageResource(planItem.getIcon_id());
         TextView planText=view.findViewById(R.id.planText);
         planText.setText(planItem.getName());
         TextView planDetails=view.findViewById(R.id.detailText);

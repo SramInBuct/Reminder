@@ -23,7 +23,7 @@ public class Event extends LitePalSupport {
     private String  Frequency;
     @Column(defaultValue ="1")
     private Integer Priority;
-    @Column(nullable = false , defaultValue ="700060")
+    @Column(nullable = false , defaultValue ="2131165309")
     private Integer Icon_id;
 
     public Event(){
