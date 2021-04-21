@@ -10,6 +10,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class Event extends LitePalSupport {
+    private Integer id;
     @Column(nullable = false)
     private String Name;
     @Column(defaultValue = "CURRENT_TIMESTAMP")
@@ -29,7 +30,8 @@ public class Event extends LitePalSupport {
     public Event(){
     }
 
-    public Event(String name, Date beginTime, Date beginDate, Date lastTime, Date endDate, String describe, String frequency, Integer priority, Integer icon_id) {
+    public Event(Integer id, String name, Date beginTime, Date beginDate, Date lastTime, Date endDate, String describe, String frequency, Integer priority, Integer icon_id) {
+        this.id = id;
         Name = name;
         BeginTime = beginTime;
         BeginDate = beginDate;
@@ -40,7 +42,13 @@ public class Event extends LitePalSupport {
         Priority = priority;
         Icon_id = icon_id;
     }
+    public Integer getId() {
+        return id;
+    }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
     public String getName() {
         return Name;
     }

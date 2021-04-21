@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.planFragment">
+    tools:context=".activities_fragements.fragements.planFragment">
 
     <soup.neumorphism.NeumorphImageButton
         android:id="@+id/inputButton"
@@ -44,30 +44,34 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.18" />
 
-    <TextView
+    <soup.neumorphism.NeumorphTextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/encourage"
         android:textSize="36sp"
         android:textStyle="bold"
+        android:theme="@style/Widget.Neumorph.TextView"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toStartOf="@+id/inputButton"
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.20" />
+        app:layout_constraintVertical_bias="0.20"
+        app:neumorph_shadowElevation="4dp" />
 
-    <TextView
+    <soup.neumorphism.NeumorphTextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Events"
         android:textSize="36sp"
         android:textStyle="bold"
+        android:theme="@style/Widget.Neumorph.TextView"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.80" />
+        app:layout_constraintVertical_bias="0.80"
+        app:neumorph_shadowElevation="4dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

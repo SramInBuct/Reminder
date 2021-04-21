@@ -156,7 +156,7 @@ public class NetworkUtil {
 
         Request request = new Request.Builder()
                 .post(body)
-                .url("http://192.168.43.228:8668/api/user/login")
+                .url("http://192.168.31.223:8668/api/user/login")
                 .build();
         Call call = okHttpClient.newCall(request);
         call.enqueue(new Callback() {
@@ -205,7 +205,7 @@ public class NetworkUtil {
 
         Request request = new Request.Builder()
                 .post(body)
-                .url("http://192.168.43.228:8668/api/user/register")
+                .url("http://192.168.31.223:8668/api/user/register")
                 .build();
         Call call = okHttpClient.newCall(request);
         call.enqueue(new Callback() {

@@ -10,6 +10,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#C0C0C0</color>
     <color name="Background">#f0f0f0</color>
-
     <color name="transparent">#9000</color>
+
+    <color name="colorPress">#ffffff</color>
+        <color name="colorNormal">#8A73F5</color>
+        <color name="tv_style_color_main">#7A63E5</color>
+        <color name="tv_style_color_seconde">#FFFFFF</color>
 </resources>

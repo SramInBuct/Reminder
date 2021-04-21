@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.reminder.fragment.studyFragment">
+    tools:context="com.example.reminder.activities_fragements.fragements.studyFragment">
 
     <WebView
         android:id="@+id/studyClass"

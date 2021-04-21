@@ -8,6 +8,20 @@
     android:background="@color/Background"
     android:backgroundTint="@color/Background">
 
+    <TextView
+        android:id="@+id/editTextEndDate"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/margin2"
+        android:background="@drawable/stroke_style"
+        android:ems="10"
+        android:gravity="center"
+        float:layout_constraintBottom_toTopOf="@+id/guideline13"
+        float:layout_constraintEnd_toStartOf="@+id/editTextEndTime"
+        float:layout_constraintHorizontal_bias="0.5"
+        float:layout_constraintStart_toStartOf="parent"
+        float:layout_constraintTop_toTopOf="@+id/guideline12" />
+
     <EditText
         android:id="@+id/inputTitle"
         android:layout_width="0dp"
@@ -33,7 +47,7 @@
         android:gravity="center"
         android:hint="@string/details"
         android:inputType="textMultiLine"
-        float:layout_constraintBottom_toTopOf="@+id/guideline10"
+        float:layout_constraintBottom_toTopOf="@+id/guideline7"
         float:layout_constraintEnd_toEndOf="parent"
         float:layout_constraintStart_toStartOf="parent"
         float:layout_constraintTop_toTopOf="@+id/guideline9" />
@@ -77,7 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        float:layout_constraintGuide_percent="0.5" />
+        float:layout_constraintGuide_percent="0.9" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline9"
@@ -88,6 +102,13 @@
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        float:layout_constraintGuide_percent="0.8" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -118,6 +139,62 @@
         float:layout_constraintEnd_toEndOf="parent"
         float:layout_constraintStart_toStartOf="parent"
         float:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/editTextBeginDate"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/margin2"
+        android:background="@drawable/stroke_style"
+        android:ems="10"
+        android:gravity="center"
+        float:layout_constraintBottom_toTopOf="@+id/guideline12"
+        float:layout_constraintEnd_toStartOf="@+id/editTextBeginTime"
+        float:layout_constraintHorizontal_bias="0.5"
+        float:layout_constraintStart_toStartOf="parent"
+        float:layout_constraintTop_toTopOf="@+id/guideline7" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        float:layout_constraintGuide_percent="0.5" />
+
+    <TextView
+        android:id="@+id/editTextBeginTime"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/margin2"
+        android:background="@drawable/stroke_style"
+        android:ems="10"
+        android:gravity="center"
+        float:layout_constraintBottom_toTopOf="@+id/guideline12"
+        float:layout_constraintEnd_toEndOf="parent"
+        float:layout_constraintHorizontal_bias="0.5"
+        float:layout_constraintStart_toEndOf="@+id/editTextBeginDate"
+        float:layout_constraintTop_toTopOf="@+id/guideline7" />
+
+    <TextView
+        android:id="@+id/editTextEndTime"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/margin2"
+        android:background="@drawable/stroke_style"
+        android:ems="10"
+        android:gravity="center"
+        float:layout_constraintBottom_toTopOf="@+id/guideline13"
+        float:layout_constraintEnd_toEndOf="parent"
+        float:layout_constraintHorizontal_bias="0.5"
+        float:layout_constraintStart_toEndOf="@+id/editTextEndDate"
+        float:layout_constraintTop_toTopOf="@+id/guideline12" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        float:layout_constraintGuide_percent="0.6" />
 
     <!--    <View-->
     <!--        android:layout_width="match_parent"-->

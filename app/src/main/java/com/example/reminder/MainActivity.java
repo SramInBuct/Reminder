@@ -8,6 +8,7 @@ import androidx.navigation.Navigation;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import org.litepal.LitePal;
 
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     void navShow(){
         navController = Navigation.findNavController(this,R.id.fragment);
         MotionLayout mine = findViewById(R.id.motionLayoutMine);
-        Button plan=findViewById(R.id.button);
+        ImageView plan=findViewById(R.id.planButton);
         MotionLayout study = findViewById(R.id.motionLayoutStudy);
         MotionLayout classtable = findViewById(R.id.motionLayoutClasstable);
         MotionLayout chart = findViewById(R.id.motionLayoutChart);

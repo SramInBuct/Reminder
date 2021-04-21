@@ -1,10 +1,9 @@
-package com.example.reminder.fragment;
+package com.example.reminder.activities_fragements.fragements;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -15,12 +14,11 @@ import android.widget.ListView;
 
 import com.example.reminder.R;
 import com.example.reminder.entities.Event;
-import com.example.reminder.planHandle.informActivity;
-import com.example.reminder.planHandle.planItemAdapter;
+import com.example.reminder.activities_fragements.planHandle.informActivity;
+import com.example.reminder.activities_fragements.planHandle.planItemAdapter;
 import com.example.reminder.util.EventDao;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class planFragment extends Fragment {
@@ -57,9 +55,12 @@ public class planFragment extends Fragment {
         });
     }
 
-
     public static void addList(Event event){
         planList.add(event);
+    }
+
+    public static void remove(Event e){
+        planList.remove(e);
     }
 
     @Override

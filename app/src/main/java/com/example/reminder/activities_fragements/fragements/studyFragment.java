@@ -1,4 +1,4 @@
-package com.example.reminder.fragment;
+package com.example.reminder.activities_fragements.fragements;
 
 import android.os.Bundle;
 

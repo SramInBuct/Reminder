@@ -11,7 +11,12 @@ public class User {
 
     private String password;
 
-    public User(String name,String mail, String uuid, String password) {
+    public User(String mail, String password) {
+        this.mail = mail;
+        this.password = password;
+    }
+
+    public User(String name, String mail, String uuid, String password) {
         this.name = name;
         this.uuid = uuid;
         this.mail = mail;
