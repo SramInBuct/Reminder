@@ -1,9 +1,7 @@
 package com.example.reminder.util;
 
-import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Message;
-import android.os.SharedMemory;
 import android.util.Log;
 
 import com.example.reminder.entities.User;
@@ -19,7 +17,6 @@ import java.io.IOException;
 
 import okhttp3.Call;
 import okhttp3.Callback;
-import okhttp3.FormBody;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -29,13 +26,14 @@ import okhttp3.ResponseBody;
 
 public class NetworkUtil {
 
-    public static final String BASE_URL="http://47.117.116.187";
+    public static final String WEA_URL ="http://47.117.116.187";
     public static final String WEATHER=":8777";
     private static final String TAG ="OkHttpClient" ;
     private static String date="2021-04-18";
     private static String local ="101010100";
     private static String type="1";
 
+    private static String LR_URL = "https://reminder.yihuang728.club";
     /**
      * GET方法
      */
@@ -44,7 +42,7 @@ public class NetworkUtil {
 
         Request request = new Request.Builder()
                 .get()
-                .url(BASE_URL+WEATHER+"/weather/days?loc="+local+"&date="+date)
+                .url(WEA_URL +WEATHER+"/weather/days?loc="+local+"&date="+date)
                 .build();
         //client创建任务
         Call call = client.newCall(request);
@@ -96,7 +94,7 @@ public class NetworkUtil {
 
         Request request = new Request.Builder()
                 .get()
-                .url(BASE_URL+WEATHER+"/weather/indices?loc="+local+"&date="+date+"&type="+type)
+                .url(WEA_URL +WEATHER+"/weather/indices?loc="+local+"&date="+date+"&type="+type)
                 .build();
         //client创建任务
         Call call = client.newCall(request);
@@ -156,7 +154,7 @@ public class NetworkUtil {
 
         Request request = new Request.Builder()
                 .post(body)
-                .url("http://192.168.58.209:8668/api/user/login")
+                .url(LR_URL +"/api/user/login")
                 .build();
         Boolean tag;
         Call call = okHttpClient.newCall(request);
@@ -220,7 +218,7 @@ public class NetworkUtil {
 
         Request request = new Request.Builder()
                 .post(body)
-                .url("http://192.168.58.209:8668/api/user/register")
+                .url(LR_URL +"/api/user/register")
                 .build();
         Call call = okHttpClient.newCall(request);
         call.enqueue(new Callback() {
