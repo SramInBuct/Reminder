@@ -1,12 +1,8 @@
 package com.example.reminder.entities;
 
-import com.example.reminder.R;
-
-import org.litepal.LitePalApplication;
 import org.litepal.annotation.Column;
 import org.litepal.crud.LitePalSupport;
 
-import java.util.Calendar;
 import java.util.Date;
 
 public class Event extends LitePalSupport {
@@ -17,7 +13,8 @@ public class Event extends LitePalSupport {
     private Date BeginTime;
     @Column(defaultValue = "CURRENT_TIMESTAMP")
     private Date BeginDate;
-    private Date LastTime;
+    @Column(defaultValue = "CURRENT_TIMESTAMP")
+    private Date EndTime;
     @Column(defaultValue = "CURRENT_TIMESTAMP")
     private Date EndDate;
     private String Describe;
@@ -35,7 +32,7 @@ public class Event extends LitePalSupport {
         Name = name;
         BeginTime = beginTime;
         BeginDate = beginDate;
-        LastTime = lastTime;
+        EndTime = lastTime;
         EndDate = endDate;
         Describe = describe;
         Frequency = frequency;
@@ -65,12 +62,12 @@ public class Event extends LitePalSupport {
         BeginTime = beginTime;
     }
 
-    public Date getLastTime() {
-        return LastTime;
+    public Date getEndTime() {
+        return EndTime;
     }
 
-    public void setLastTime(Date lastTime) {
-        LastTime = lastTime;
+    public void setEndTime(Date endTime) {
+        EndTime = endTime;
     }
 
     public String getDescribe() {
@@ -127,7 +124,7 @@ public class Event extends LitePalSupport {
                 "Name='" + Name + '\'' +
                 ", BeginTime=" + BeginTime +
                 ", BeginDate=" + BeginDate +
-                ", LastTime=" + LastTime +
+                ", LastTime=" + EndTime +
                 ", EndDate=" + EndDate +
                 ", Describe=" + Describe +
                 ", Frequency='" + Frequency + '\'' +

@@ -14,11 +14,18 @@
     <string name="DetailsInput">detailsInput</string>
     <string name="encourage">Dont miss any</string>
     <string name="Events">Events!</string>
-    <string name="InfromHead">信息输入</string>
+    <string name="InfromHead">计划内容</string>
     <string name="login">登录</string>
     <string name="delete">删除</string>
     <string name="account">账号</string>
     <string name="password">密码</string>
     <string name="Username">用户名</string>
     <string name="register">注册</string>
+    <string name="EndDate">完成日期</string>
+    <string name="EndTime">完成时间</string>
+    <string name="beginTime">开始时间</string>
+    <string name="exercise">锻炼</string>
+    <string name="sleep">休息</string>
+    <string name="work">工作</string>
+    <string name="entertaiment">娱乐</string>
 </resources>

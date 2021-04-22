@@ -20,6 +20,8 @@ import com.example.reminder.activities_fragements.fragements.planFragment;
 import com.example.reminder.entities.Event;
 import com.example.reminder.util.EventDao;
 
+import java.sql.Time;
+import java.util.Date;
 import java.util.List;
 
 public class planItemAdapter extends ArrayAdapter<Event> {
@@ -73,7 +75,7 @@ public class planItemAdapter extends ArrayAdapter<Event> {
         });
 
         ImageView planImage=(ImageView)view.findViewById(R.id.planImageView);
-        planImage.setImageResource(R.drawable.ic_mine);
+        planImage.setImageResource(planItem.getIcon_id());
 
         TextView planText=view.findViewById(R.id.planText);
         planText.setText(planItem.getName());
@@ -81,8 +83,18 @@ public class planItemAdapter extends ArrayAdapter<Event> {
         TextView planDetails=view.findViewById(R.id.detailText);
         planDetails.setText(planItem.getDescribe());
 
+        Date date=planItem.getEndDate();
+        int year=date.getYear();
+        int month=date.getMonth();
+        int day=date.getDay();
+        int hour=date.getHours();
+        int minute=date.getMinutes();
+        final StringBuffer date_default = new StringBuffer();
+        final StringBuffer time_default = new StringBuffer();
+        date_default.append(year + "年" + (month+1) + "月" + day +"日");
+        time_default.append(hour + "点" + minute+"分");
         TextView dateText=view.findViewById(R.id.timeText);
-        dateText.setText(planItem.getBeginDate().toString());
+        dateText.setText(date_default.append(time_default));
 
         return view;
     }

@@ -7,12 +7,14 @@ import androidx.navigation.Navigation;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.widget.Button;
 import android.widget.ImageView;
 
 import org.litepal.LitePal;
 
 public class MainActivity extends AppCompatActivity {
+    Vibrator vibrator;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     private NavController navController;
     void navShow(){
+        vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
         navController = Navigation.findNavController(this,R.id.fragment);
         MotionLayout mine = findViewById(R.id.motionLayoutMine);
         ImageView plan=findViewById(R.id.planButton);
@@ -35,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         study.setOnClickListener(v -> navController.navigate(R.id.studyFragment));
         chart.setOnClickListener(v -> navController.navigate(R.id.chartFragment));
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
+            vibrator.vibrate(60);
             controller.popBackStack();
             mine.setProgress(0f);
             study.setProgress(0f);

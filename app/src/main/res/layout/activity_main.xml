@@ -21,7 +21,7 @@
             android:id="@+id/planButton"
             android:layout_width="52dp"
             android:layout_height="52dp"
-            android:layout_margin="4dp"
+            android:layout_margin="8dp"
             app:srcCompat="@drawable/ic_plan" />
 
         <!--        <Button-->
@@ -137,6 +137,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.97" />
+        app:layout_constraintGuide_percent="0.98" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
