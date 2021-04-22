@@ -156,8 +156,9 @@ public class NetworkUtil {
 
         Request request = new Request.Builder()
                 .post(body)
-                .url("http://192.168.31.223:8668/api/user/login")
+                .url("http://192.168.58.209:8668/api/user/login")
                 .build();
+        Boolean tag;
         Call call = okHttpClient.newCall(request);
         call.enqueue(new Callback() {
             @Override
@@ -177,17 +178,31 @@ public class NetworkUtil {
 
                 String result = response.body().string();//string不能调用两次 被调用一次就关闭了，这里调用两次会报异常
                 String token = null;
+                String status = null;
+                Object msg;
+                JSONObject js;
                 try {
-                    JSONObject js = new JSONObject(result);
-                    JSONObject msg = js.getJSONObject("msg");
-                    token = msg.getString("token");
+                    js = new JSONObject(result);
+                    status = js.getString("status");
+                    Log.d(TAG,"status->"+status);
+                    if(status.equals("FAIL")) {
+                        message.what=4;
+                        msg = js.getString("msg");
+                        message.obj = (String)msg;
+                        Log.d(TAG,"onResponse->msg: "+message.obj.toString());
+                    }
+                    else{
+                        msg = js.getJSONObject("msg");
+                        token =((JSONObject)msg).getString("token");
+                        message.obj = token;
+                        Log.d(TAG, "onResponse->token: " + message.obj.toString());
+
+                    }
 
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                message.obj = token;
                 handler.sendMessage(message);
-                Log.d(TAG, "onResponse->token: " + message.obj.toString());
 
             }
         });
@@ -205,7 +220,7 @@ public class NetworkUtil {
 
         Request request = new Request.Builder()
                 .post(body)
-                .url("http://192.168.31.223:8668/api/user/register")
+                .url("http://192.168.58.209:8668/api/user/register")
                 .build();
         Call call = okHttpClient.newCall(request);
         call.enqueue(new Callback() {
@@ -223,9 +238,25 @@ public class NetworkUtil {
             public void onResponse(Call call, okhttp3.Response response) throws IOException {
                 Message message = Message.obtain();
                 message.what = 2;
-                message.obj = response.body().string();//string不能调用两次 被调用一次就关闭了，这里调用两次会报异常
+                String result = response.body().string();//string不能调用两次 被调用一次就关闭了，这里调用两次会报异常
+                String token = null;
+                String status = null;
+                Object msg;
+                JSONObject js;
+                try {
+                    js = new JSONObject(result);
+                    status = js.getString("status");
+                    Log.d(TAG,"status->"+status);
+                    if(status.equals("FAIL")) {
+                        message.what=4;
+                    }
+                    msg = js.getString("msg");
+                    message.obj = (String)msg;
+                    Log.d(TAG,"onResponse->msg: "+message.obj.toString());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
                 handler.sendMessage(message);
-                Log.d(TAG, "onResponse: " + message.obj.toString());
 
             }
         });

@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,10 +37,21 @@ public class loginActivity extends AppCompatActivity {
                     @Override
                     public void handleMessage(@NonNull Message msg) {
                         switch (msg.what){
+                            case 0:
+                                Log.d("Login","handleMessage: 网络错误");
+                                Toast.makeText(loginActivity.this,"网络服务请求失败",Toast.LENGTH_SHORT).show();
+                                break;
                             case 2:
                                 SharedPreferences login = getSharedPreferences("login", Context.MODE_PRIVATE);
                                 login.edit().putString("token",(String)msg.obj).commit();
+                                Log.d("Login", "handleMessage: 登录成功");
+
                                 break;
+                            case 4:
+                                Log.d("Login","handleMessage: 登陆失败");
+                                Toast.makeText(loginActivity.this,"用户名或密码错误",Toast.LENGTH_SHORT).show();
+                                break;
+
                         }
                     }
                 };

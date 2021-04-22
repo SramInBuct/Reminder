@@ -41,12 +41,23 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 User user=new User(username.getText().toString(),account.getText().toString(),"",password.getText().toString());
                 Handler handler = new Handler(Looper.myLooper()) {
+                    private static final String TAG = "Register";
+
                     @Override
                     public void handleMessage(@NonNull Message msg) {
                         switch (msg.what){
+                            case 0:
+                                Log.d(TAG,"handleMessage: 网络错误");
+                                Toast.makeText(RegisterActivity.this,"网络服务请求失败",Toast.LENGTH_SHORT).show();
+                                break;
                             case 2:
-                                SharedPreferences login = getSharedPreferences("login", Context.MODE_PRIVATE);
+                                SharedPreferences login = getSharedPreferences(TAG, Context.MODE_PRIVATE);
                                 login.edit().putString("token",(String)msg.obj).commit();
+                                Toast.makeText(RegisterActivity.this,"注册成功",Toast.LENGTH_SHORT).show();
+                                break;
+                            case 4:
+                                Log.d(TAG,"handleMessage:"+msg.obj.toString());
+                                Toast.makeText(RegisterActivity.this,msg.obj.toString(),Toast.LENGTH_SHORT).show();
                                 break;
                         }
                     }
