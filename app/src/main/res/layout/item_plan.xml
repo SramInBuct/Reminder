@@ -22,7 +22,7 @@
         <!--        app:neumorph_strokeWidth="1dp">-->
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
+            android:layout_width="357dp"
             android:layout_height="match_parent">
 
             <androidx.constraintlayout.widget.Guideline
@@ -37,7 +37,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:layout_marginEnd="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_delete" />
@@ -74,12 +73,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ellipsize="end"
-                android:ems="16"
-                android:maxEms="16"
+                android:ems="13"
+                android:maxEms="13"
                 android:maxLines="1"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toTopOf="@+id/timeText"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/planText"
                 app:layout_constraintTop_toBottomOf="@+id/planText" />
 
@@ -88,14 +86,21 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
-                android:ems="18"
-                android:maxEms="18"
+                android:ems="15"
+                android:maxEms="15"
                 android:maxLines="1"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
                 app:layout_constraintTop_toBottomOf="@+id/detailText" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/ic_checked" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

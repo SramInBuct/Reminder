@@ -183,69 +183,58 @@
         float:layout_constraintStart_toEndOf="@+id/editTextEndDate"
         float:layout_constraintTop_toBottomOf="@+id/textView9" />
 
-    <TextView
+    <soup.neumorphism.NeumorphTextView
+        style="@style/Widget.Neumorph.TextView"
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin4"
-        android:background="@drawable/full_style"
-        android:padding="@dimen/margin4"
-        android:paddingTop="@dimen/margin4"
-        android:paddingBottom="@dimen/margin4"
+        android:layout_marginTop="@dimen/margin4"
         android:text="@string/todoName"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="18sp"
         float:layout_constraintEnd_toStartOf="@+id/inputTitle"
         float:layout_constraintHorizontal_bias="0.5"
         float:layout_constraintStart_toStartOf="parent"
         float:layout_constraintTop_toTopOf="@+id/guideline11" />
 
-    <TextView
+    <soup.neumorphism.NeumorphTextView
+        style="@style/Widget.Neumorph.TextView"
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin4"
         android:layout_marginTop="@dimen/margin4"
-        android:background="@drawable/full_style"
-        android:padding="@dimen/margin4"
-        android:paddingTop="@dimen/margin4"
-        android:paddingBottom="@dimen/margin4"
         android:text="@string/details"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="18sp"
         float:layout_constraintEnd_toStartOf="@+id/inputDetails"
         float:layout_constraintHorizontal_bias="0.5"
         float:layout_constraintStart_toStartOf="parent"
-        float:layout_constraintTop_toBottomOf="@+id/inputTitle" />
+        float:layout_constraintTop_toTopOf="@+id/inputDetails" />
 
-    <TextView
+    <soup.neumorphism.NeumorphTextView
+        style="@style/Widget.Neumorph.TextView"
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin4"
         android:layout_marginTop="@dimen/margin4"
-        android:background="@drawable/full_style"
-        android:padding="@dimen/margin4"
-        android:paddingTop="@dimen/margin4"
-        android:paddingBottom="@dimen/margin4"
         android:text="@string/beginTime"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="18sp"
         float:layout_constraintStart_toStartOf="parent"
         float:layout_constraintTop_toTopOf="@+id/guideline7" />
 
-    <TextView
+    <soup.neumorphism.NeumorphTextView
+        style="@style/Widget.Neumorph.TextView"
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin4"
         android:layout_marginTop="@dimen/margin4"
-        android:background="@drawable/full_style"
-        android:padding="@dimen/margin4"
-        android:paddingTop="@dimen/margin4"
-        android:paddingBottom="@dimen/margin4"
         android:text="@string/EndTime"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="18sp"
         float:layout_constraintStart_toStartOf="parent"
         float:layout_constraintTop_toBottomOf="@+id/editTextBeginDate" />

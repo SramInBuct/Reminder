@@ -54,7 +54,7 @@
         app:layout_constraintVertical_bias="1.0"
         app:navGraph="@navigation/navigation" />
 
-    <androidx.cardview.widget.CardView
+    <soup.neumorphism.NeumorphCardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -67,9 +67,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline">
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:neumorph_insetEnd="0dp"
+        app:neumorph_insetStart="0dp"
+        app:neumorph_insetTop="6dp"
+        app:neumorph_shadowElevation="4dp">
 
         <LinearLayout
+
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="64dp"
@@ -109,7 +114,7 @@
                 android:layout_weight="1" />
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </soup.neumorphism.NeumorphCardView>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
