@@ -28,4 +28,6 @@
     <string name="sleep">休息</string>
     <string name="work">工作</string>
     <string name="entertaiment">娱乐</string>
+    <string name="logout">注销</string>
+    <string name="exit">退出</string>
 </resources>

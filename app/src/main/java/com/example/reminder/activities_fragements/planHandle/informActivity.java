@@ -11,17 +11,15 @@ import android.widget.DatePicker;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.TimePicker;
-import android.widget.ToggleButton;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.reminder.R;
-import com.example.reminder.entities.Event;
 import com.example.reminder.activities_fragements.fragements.planFragment;
+import com.example.reminder.entities.Event;
 import com.example.reminder.util.EventDao;
 
-import java.sql.Time;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -59,43 +57,23 @@ public class informActivity extends AppCompatActivity {
         endDateInput.setHours(hour);
         endDateInput.setMinutes(minute);
         date_default.append(year + "年" + (month+1) + "月" + day +"日");
-        time_default.append(hour + "点" + minute+"分");
+        time_default.append(hour).append("点").append(minute).append("分");
 
         TextView dateTextBegin=(TextView) findViewById(R.id.editTextBeginDate);
         dateTextBegin.setText(date_default);
-        dateTextBegin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDatePick((TextView) v);
-            }
-        });
+        dateTextBegin.setOnClickListener(v -> showDatePick((TextView) v));
 
         TextView dateTextEnd=(TextView) findViewById(R.id.editTextEndDate);
         dateTextEnd.setText(date_default);
-        dateTextEnd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDatePick((TextView) v);
-            }
-        });
+        dateTextEnd.setOnClickListener(v -> showDatePick((TextView) v));
 
         TextView timeTextBegin=(TextView) findViewById(R.id.editTextBeginTime);
         timeTextBegin.setText(time_default);
-        timeTextBegin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showTimePick((TextView) v);
-            }
-        });
+        timeTextBegin.setOnClickListener(v -> showTimePick((TextView) v));
 
         TextView timeTextEnd=(TextView) findViewById(R.id.editTextEndTime);
         timeTextEnd.setText(time_default);
-        timeTextEnd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showTimePick((TextView) v);
-            }
-        });
+        timeTextEnd.setOnClickListener(v -> showTimePick((TextView) v));
     }
 
     private void showDatePick(final TextView dateText){
@@ -110,9 +88,15 @@ public class informActivity extends AppCompatActivity {
             //选择完日期后会调用该回调函数
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                endDateInput.setYear(year);
-                endDateInput.setMonth(monthOfYear);
-                endDateInput.setDate(dayOfMonth);
+                if(dateText.getId()==R.id.editTextBeginDate){
+                    beginDateInput.setYear(year);
+                    beginDateInput.setMonth(monthOfYear);
+                    beginDateInput.setDate(dayOfMonth+1);
+                }else if(dateText.getId()==R.id.editTextEndDate) {
+                    endDateInput.setYear(year);
+                    endDateInput.setMonth(monthOfYear);
+                    endDateInput.setDate(dayOfMonth+1);
+                }
                 //因为monthOfYear会比实际月份少一月所以这边要加1
                 date.append(year + "年" + (monthOfYear+1) + "月" + dayOfMonth +"日");
                 dateText.setText(date);
@@ -124,6 +108,7 @@ public class informActivity extends AppCompatActivity {
     @SuppressLint("NonConstantResourceId")
     private Integer getIcon(){
         RadioGroup rdp=findViewById(R.id.radioGroup);
+
         int id = rdp.getCheckedRadioButtonId();
         switch (id){
             case R.id.radioButton: return R.drawable.ic_exercise;
@@ -144,8 +129,14 @@ public class informActivity extends AppCompatActivity {
             //选择完时间后会调用该回调函数
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                endDateInput.setHours(hourOfDay);
-                endDateInput.setMinutes(minute);
+                if(timeText.getId()==R.id.editTextBeginDate){
+                    beginDateInput.setHours(hourOfDay);
+                    beginDateInput.setMinutes(minute);
+                }else if(timeText.getId()==R.id.editTextEndTime){
+                    endDateInput.setHours(hourOfDay);
+                    endDateInput.setMinutes(minute);
+                }
+
                 time.append(hourOfDay + "点" + minute+"分");
                 //设置TextView显示最终选择的时间
                 timeText.setText(time);
@@ -168,7 +159,7 @@ public class informActivity extends AppCompatActivity {
                 event.setBeginDate(beginDateInput);
                 event.setBeginTime(beginDateInput);
                 event.setEndDate(endDateInput);
-                event.setEndDate(endDateInput);
+                event.setEndTime(endDateInput);
                 event.setName(title);
                 event.setDescribe(details);
                 event.setIcon_id(getIcon());

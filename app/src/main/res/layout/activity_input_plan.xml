@@ -286,6 +286,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
+            android:checked="true"
             android:text="@string/work" />
 
         <RadioButton
@@ -301,7 +302,6 @@
         android:id="@+id/radioGroup2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:orientation="horizontal"
         float:layout_constraintEnd_toEndOf="parent"
         float:layout_constraintStart_toStartOf="parent"
@@ -311,29 +311,29 @@
             android:id="@+id/imageViewExercise"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="42dp"
+            android:layout_marginLeft="36dp"
             float:srcCompat="@drawable/ic_exercise" />
 
         <ImageView
             android:id="@+id/imageViewLive"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="42dp"
+            android:layout_marginLeft="36dp"
             float:srcCompat="@drawable/ic__28_sleeping" />
 
         <ImageView
             android:id="@+id/imageViewWrok"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="42dp"
+            android:layout_marginLeft="36dp"
             float:srcCompat="@drawable/ic_reading" />
 
         <ImageView
             android:id="@+id/imageViewGame"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="42dp"
-            android:layout_marginRight="42dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginRight="36dp"
             float:srcCompat="@drawable/ic_game" />
 
     </RadioGroup>
