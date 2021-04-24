@@ -1,4 +1,4 @@
-package com.example.reminder.activities_fragements.fragements;
+package com.example.reminder.activities_fragments.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,12 +8,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
 import com.example.reminder.R;
-import com.example.reminder.activities_fragements.stydyHandle.ClockActivity;
-import com.example.reminder.activities_fragements.stydyHandle.StudyActivity;
+import com.example.reminder.activities_fragments.studyHandle.ClockActivity;
+import com.example.reminder.activities_fragments.studyHandle.StudyActivity;
 
 public class studyFragment extends Fragment {
 

@@ -1,4 +1,4 @@
-package com.example.reminder.activities_fragements.mineHandle;
+package com.example.reminder.activities_fragments.mineHandle;
 
 import android.content.Context;
 import android.content.SharedPreferences;

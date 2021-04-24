@@ -14,9 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Draft2"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities_fragements.stydyHandle.ClockActivity"></activity>
-        <activity android:name=".activities_fragements.stydyHandle.StudyActivity" />
-        <activity android:name=".activities_fragements.mineHandle.RegisterActivity" />
+        <activity android:name=".activities_fragments.studyHandle.ClockActivity"></activity>
+        <activity android:name=".activities_fragments.studyHandle.StudyActivity" />
+        <activity android:name=".activities_fragments.mineHandle.RegisterActivity" />
 
         <service
             android:name=".service.MasterService"
@@ -46,12 +46,12 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".activities_fragements.planHandle.informActivity">
+        <activity android:name=".activities_fragments.planHandle.informActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities_fragements.mineHandle.loginActivity">
+        <activity android:name=".activities_fragments.mineHandle.loginActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

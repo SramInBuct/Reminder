@@ -1,4 +1,4 @@
-package com.example.reminder.activities_fragements.loadActivity;
+package com.example.reminder.activities_fragments.loadActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

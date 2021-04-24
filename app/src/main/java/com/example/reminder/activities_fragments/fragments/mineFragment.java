@@ -1,4 +1,4 @@
-package com.example.reminder.activities_fragements.fragements;
+package com.example.reminder.activities_fragments.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,8 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.reminder.R;
-import com.example.reminder.activities_fragements.mineHandle.RegisterActivity;
-import com.example.reminder.activities_fragements.mineHandle.loginActivity;
+import com.example.reminder.activities_fragments.mineHandle.RegisterActivity;
+import com.example.reminder.activities_fragments.mineHandle.loginActivity;
 
 public class mineFragment extends Fragment {
 

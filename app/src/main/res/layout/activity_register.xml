@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/Background"
     android:backgroundTint="@color/Background"
-    tools:context=".activities_fragements.mineHandle.RegisterActivity">
+    tools:context=".activities_fragments.mineHandle.RegisterActivity">
 
     <ImageView
         android:id="@+id/imageView3"

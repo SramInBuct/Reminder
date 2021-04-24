@@ -1,4 +1,4 @@
-package com.example.reminder.activities_fragements.fragements;
+package com.example.reminder.activities_fragments.fragments;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -14,8 +14,8 @@ import android.widget.ListView;
 
 import com.example.reminder.R;
 import com.example.reminder.entities.Event;
-import com.example.reminder.activities_fragements.planHandle.informActivity;
-import com.example.reminder.activities_fragements.planHandle.planItemAdapter;
+import com.example.reminder.activities_fragments.planHandle.informActivity;
+import com.example.reminder.activities_fragments.planHandle.planItemAdapter;
 import com.example.reminder.util.EventDao;
 
 import java.util.ArrayList;

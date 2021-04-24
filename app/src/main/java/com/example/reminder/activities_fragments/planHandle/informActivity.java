@@ -1,4 +1,4 @@
-package com.example.reminder.activities_fragements.planHandle;
+package com.example.reminder.activities_fragments.planHandle;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
@@ -17,8 +17,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.reminder.R;
-import com.example.reminder.activities_fragements.fragements.planFragment;
-import com.example.reminder.activities_fragements.mineHandle.loginActivity;
+import com.example.reminder.activities_fragments.fragments.planFragment;
 import com.example.reminder.entities.Event;
 import com.example.reminder.util.EventDao;
 
