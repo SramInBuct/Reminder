@@ -13,6 +13,7 @@ import android.os.Vibrator;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.reminder.activities_fragments.loadActivity.LoadActivity;
 import com.example.reminder.activities_fragments.mineHandle.LoginActivity;
 
 import org.litepal.LitePal;
@@ -91,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
                 chart.transitionToEnd();
             }
         });
-
         if (token == null) {
             Intent in = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(in);

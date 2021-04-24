@@ -31,4 +31,5 @@
     <string name="Register2">没有账号？立即注册</string>
     <string name="settings">设置</string>
     <string name="frequency">重复</string>
+    <string name="AppName">化小秘</string>
 </resources>

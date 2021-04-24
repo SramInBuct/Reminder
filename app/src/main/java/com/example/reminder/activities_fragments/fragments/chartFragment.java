@@ -81,10 +81,10 @@ public class chartFragment extends Fragment {
         });
         //模拟数据
         ArrayList<PieEntry> entries = new ArrayList<PieEntry>();
-        entries.add(new PieEntry(40, "优秀"));
-        entries.add(new PieEntry(20, "满分"));
-        entries.add(new PieEntry(30, "及格"));
-        entries.add(new PieEntry(10, "不及格"));
+        entries.add(new PieEntry(20, "锻炼"));
+        entries.add(new PieEntry(10, "休息"));
+        entries.add(new PieEntry(50, "学习"));
+        entries.add(new PieEntry(20, "工作"));
 
         //设置数据
         setData(entries);
@@ -107,7 +107,7 @@ public class chartFragment extends Fragment {
     }
     //设置数据
     private void setData(ArrayList<PieEntry> entries) {
-        PieDataSet dataSet = new PieDataSet(entries, "三年级一班");
+        PieDataSet dataSet = new PieDataSet(entries, "时间记录");
         dataSet.setSliceSpace(3f);
         dataSet.setSelectionShift(5f);
 
