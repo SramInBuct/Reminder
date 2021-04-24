@@ -25,7 +25,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 
-public class informActivity extends AppCompatActivity {
+public class InformActivity extends AppCompatActivity {
     Date beginDateInput=new Date();
     Date endDateInput=new Date();
 
@@ -85,7 +85,7 @@ public class informActivity extends AppCompatActivity {
         int month = calendar.get(Calendar.MONTH);
         int day = calendar.get(Calendar.DAY_OF_MONTH);
         //实例化DatePickerDialog对象
-        DatePickerDialog datePickerDialog = new DatePickerDialog(informActivity.this, new DatePickerDialog.OnDateSetListener() {
+        DatePickerDialog datePickerDialog = new DatePickerDialog(InformActivity.this, new DatePickerDialog.OnDateSetListener() {
             //选择完日期后会调用该回调函数
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
@@ -126,7 +126,7 @@ public class informActivity extends AppCompatActivity {
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
         int minute = calendar.get(Calendar.MINUTE);
         //实例化TimePickerDialog对象
-        final TimePickerDialog timePickerDialog = new TimePickerDialog(informActivity.this, new TimePickerDialog.OnTimeSetListener() {
+        final TimePickerDialog timePickerDialog = new TimePickerDialog(InformActivity.this, new TimePickerDialog.OnTimeSetListener() {
             //选择完时间后会调用该回调函数
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
@@ -156,7 +156,7 @@ public class informActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String title= String.valueOf(inputTitle.getText());
                 if(title.length()==0){
-                    Toast.makeText(informActivity.this,"请输入计划名称",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(InformActivity.this,"请输入计划名称",Toast.LENGTH_SHORT).show();
                     return;
                 }
                 String details=String.valueOf(inputDetails.getText());
@@ -170,14 +170,14 @@ public class informActivity extends AppCompatActivity {
                 event.setIcon_id(getIcon());
                 EventDao.insert(event);
                 planFragment.addList(event);
-                informActivity.this.finish();
+                InformActivity.this.finish();
             }
         });
         Button btn_cancel=findViewById(R.id.btn_cancel);
         btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                informActivity.this.finish();
+                InformActivity.this.finish();
             }
         });
     }

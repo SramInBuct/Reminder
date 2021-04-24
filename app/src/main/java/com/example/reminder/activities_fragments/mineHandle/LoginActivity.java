@@ -23,7 +23,7 @@ import org.json.JSONException;
 
 import java.util.ArrayList;
 
-public class loginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,19 +41,21 @@ public class loginActivity extends AppCompatActivity {
                         switch (msg.what){
                             case 0:
                                 Log.d("Login","handleMessage: 网络错误");
-                                Toast.makeText(loginActivity.this,"网络服务请求失败",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this,"网络服务请求失败",Toast.LENGTH_SHORT).show();
                                 break;
                             case 2:
                                 SharedPreferences login = getSharedPreferences("login", Context.MODE_PRIVATE);
                                 ArrayList<String> inform = (ArrayList<String>) msg.obj;
                                 login.edit().putString("token",inform.get(0)).commit();
                                 login.edit().putString("name",inform.get(1)).commit();
+                                Toast.makeText(LoginActivity.this,"登陆成功",Toast.LENGTH_SHORT).show();
                                 Log.d("Login", "handleMessage: 登录成功");
+                                LoginActivity.this.finish();
 
                                 break;
                             case 4:
                                 Log.d("Login","handleMessage: 登陆失败");
-                                Toast.makeText(loginActivity.this,"用户名或密码错误",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this,"用户名或密码错误",Toast.LENGTH_SHORT).show();
                                 break;
 
                         }

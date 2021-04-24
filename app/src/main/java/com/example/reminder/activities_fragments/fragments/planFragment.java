@@ -14,8 +14,8 @@ import android.widget.ListView;
 
 import com.example.reminder.R;
 import com.example.reminder.entities.Event;
-import com.example.reminder.activities_fragments.planHandle.informActivity;
-import com.example.reminder.activities_fragments.planHandle.planItemAdapter;
+import com.example.reminder.activities_fragments.planHandle.InformActivity;
+import com.example.reminder.activities_fragments.planHandle.PlanItemAdapter;
 import com.example.reminder.util.EventDao;
 
 import java.util.ArrayList;
@@ -34,7 +34,7 @@ public class planFragment extends Fragment {
     }
 
     private void showListView(View view) {
-        planItemAdapter adapter=new planItemAdapter(getActivity(), R.layout.item_plan,planList);
+        PlanItemAdapter adapter=new PlanItemAdapter(getActivity(), R.layout.item_plan,planList);
         ListView listView=(ListView) view.findViewById(R.id.plan_list_view);
         listView.setAdapter(adapter);
     }
@@ -49,7 +49,7 @@ public class planFragment extends Fragment {
             @SuppressLint("ResourceType")
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getActivity(), informActivity.class);
+                Intent intent=new Intent(getActivity(), InformActivity.class);
                 startActivity(intent);
             }
         });

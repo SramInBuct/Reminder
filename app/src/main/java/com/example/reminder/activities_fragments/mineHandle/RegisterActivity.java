@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -54,6 +55,9 @@ public class RegisterActivity extends AppCompatActivity {
                                 SharedPreferences login = getSharedPreferences(TAG, Context.MODE_PRIVATE);
                                 login.edit().putString("token",(String)msg.obj).commit();
                                 Toast.makeText(RegisterActivity.this,"注册成功",Toast.LENGTH_SHORT).show();
+                                RegisterActivity.this.finish();
+                                Intent in=new Intent(RegisterActivity.this, LoginActivity.class);
+                                startActivity(in);
                                 break;
                             case 4:
                                 Log.d(TAG,"handleMessage:"+msg.obj.toString());

@@ -22,10 +22,10 @@ import com.example.reminder.util.EventDao;
 import java.util.Date;
 import java.util.List;
 
-public class planItemAdapter extends ArrayAdapter<Event> {
+public class PlanItemAdapter extends ArrayAdapter<Event> {
     private final int resourceId;
 
-    public planItemAdapter(@NonNull Context context, int textViewResourceId, @NonNull List<Event> objects) {
+    public PlanItemAdapter(@NonNull Context context, int textViewResourceId, @NonNull List<Event> objects) {
         super(context, textViewResourceId, objects);
         resourceId=textViewResourceId;
     }

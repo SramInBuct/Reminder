@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 
 import com.example.reminder.R;
 import com.example.reminder.activities_fragments.mineHandle.RegisterActivity;
-import com.example.reminder.activities_fragments.mineHandle.loginActivity;
+import com.example.reminder.activities_fragments.mineHandle.LoginActivity;
 
 public class mineFragment extends Fragment {
 
@@ -23,7 +23,7 @@ public class mineFragment extends Fragment {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in=new Intent(getActivity(), loginActivity.class);
+                Intent in=new Intent(getActivity(), LoginActivity.class);
                 startActivity(in);
             }
         });

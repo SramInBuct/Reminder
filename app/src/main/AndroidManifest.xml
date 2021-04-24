@@ -46,12 +46,12 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".activities_fragments.planHandle.informActivity">
+        <activity android:name=".activities_fragments.planHandle.InformActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities_fragments.mineHandle.loginActivity">
+        <activity android:name=".activities_fragments.mineHandle.LoginActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
