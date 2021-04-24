@@ -7,48 +7,77 @@
     android:background="@color/Background"
     android:backgroundTint="@color/Background">
 
-    <ImageView
-        android:id="@+id/ImageViewHeadIcon"
+    <soup.neumorphism.NeumorphCardView
+        android:id="@+id/neumorphCardView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="TODO"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline14"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.10"
-        app:srcCompat="@drawable/ic_headicon"
-        tools:srcCompat="@drawable/ic_headicon" />
+        app:layout_constraintTop_toBottomOf="@+id/ImageViewHeadIcon"
+        app:layout_constraintVertical_bias="1.0"
+        app:neumorph_shadowElevation="4dp"
+        app:neumorph_shapeAppearance="@style/CustomShapeAppearance">
+
+        <EditText
+            android:id="@+id/editTextAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/default_edit_text_background"
+            android:ems="12"
+            android:hint="@string/account"
+            android:inputType="textPersonName"
+            android:padding="@dimen/margin4" />
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/button_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/neumorphCardView5"
+        app:neumorph_shadowElevation="4dp"
+        app:neumorph_shapeAppearance="@style/CustomShapeAppearance">
+
+        <EditText
+            android:id="@+id/editTextTextPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/default_edit_text_background"
+            android:ems="12"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:padding="@dimen/margin4" />
+    </soup.neumorphism.NeumorphCardView>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.55" />
 
-    <EditText
-        android:id="@+id/editTextTextPassword"
+    <ImageView
+        android:id="@+id/ImageViewHeadIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/stroke_style"
-        android:ems="12"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:padding="@dimen/margin4"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:contentDescription="TODO"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/guideline14"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline14"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_headicon"
+        tools:srcCompat="@drawable/ic_headicon" />
 
-    <Button
+    <soup.neumorphism.NeumorphButton
         android:id="@+id/button_login"
+        style="@style/Widget.Neumorph.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin4"
         android:padding="@dimen/margin4"
         android:text="@string/login"
         android:textSize="18sp"
@@ -57,19 +86,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline14"
-        app:layout_constraintVertical_bias="0.60" />
-
-    <EditText
-        android:id="@+id/editTextAccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/stroke_style"
-        android:ems="12"
-        android:hint="@string/account"
-        android:inputType="textPersonName"
-        android:padding="@dimen/margin4"
-        app:layout_constraintBottom_toTopOf="@+id/guideline14"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:neumorph_shadowElevation="4dp"
+        app:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

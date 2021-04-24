@@ -28,14 +28,14 @@ public class mineFragment extends Fragment {
             }
         });
 
-        View register=view.findViewById(R.id.register);
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent in=new Intent(getActivity(), RegisterActivity.class);
-                startActivity(in);
-            }
-        });
+//        View register=view.findViewById(R.id.register);
+//        register.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent in=new Intent(getActivity(), RegisterActivity.class);
+//                startActivity(in);
+//            }
+//        });
         return view;
     }
 }
