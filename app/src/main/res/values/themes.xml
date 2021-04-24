@@ -13,7 +13,16 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="CustomShapeAppearance">
+        <item name="neumorph_cornerFamily">rounded</item>
+        <item name="neumorph_cornerSize">4dp</item>
 
+        <!-- Or if wants different radii depending on the corner. -->
+        <item name="neumorph_cornerSizeTopLeft">8dp</item>
+        <item name="neumorph_cornerSizeTopRight">8dp</item>
+        <item name="neumorph_cornerSizeBottomLeft">8dp</item>
+        <item name="neumorph_cornerSizeBottomRight">8dp</item>
+    </style>
     <style name="dialog" parent="@style/Theme.AppCompat.Dialog.Alert">
         <!--边框-->
         <item name="android:windowFrame">@color/gray</item>

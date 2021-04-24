@@ -8,71 +8,269 @@
     android:background="@color/Background"
     android:backgroundTint="@color/Background">
 
-    <TextView
-        android:id="@+id/editTextEndDate"
+    <soup.neumorphism.NeumorphCardView
+        float:neumorph_shapeAppearance="@style/CustomShapeAppearance"
+        float:neumorph_shadowElevation="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        float:layout_constraintBottom_toTopOf="@+id/guideline12"
+        float:layout_constraintEnd_toEndOf="parent"
+        float:layout_constraintStart_toStartOf="parent"
+        float:layout_constraintTop_toTopOf="@+id/guideline10">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/margin4"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                float:layout_constraintBottom_toTopOf="@+id/radioGroup2"
+                float:layout_constraintEnd_toEndOf="parent"
+                float:layout_constraintHorizontal_bias="0.5"
+                float:layout_constraintStart_toStartOf="parent"
+                float:layout_constraintTop_toTopOf="parent">
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:text="@string/exercise" />
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:text="@string/sleep" />
+
+                <RadioButton
+                    android:id="@+id/radioButton3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:checked="true"
+                    android:text="@string/study" />
+
+                <RadioButton
+                    android:id="@+id/radioButton4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"
+                    android:text="@string/work" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioGroup2"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/margin4"
+                android:orientation="horizontal"
+                float:layout_constraintBottom_toBottomOf="parent"
+                float:layout_constraintEnd_toEndOf="parent"
+                float:layout_constraintHorizontal_bias="0.5"
+                float:layout_constraintStart_toStartOf="parent"
+                float:layout_constraintTop_toBottomOf="@+id/radioGroup">
+
+                <ImageView
+                    android:id="@+id/imageViewExercise"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="36dp"
+                    float:srcCompat="@drawable/ic_exercise" />
+
+                <ImageView
+                    android:id="@+id/imageViewLive"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="36dp"
+                    float:srcCompat="@drawable/ic_rest" />
+
+                <ImageView
+                    android:id="@+id/imageViewWrok"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="36dp"
+                    float:srcCompat="@drawable/ic_studying" />
+
+                <ImageView
+                    android:id="@+id/imageViewStudy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginRight="36dp"
+                    float:srcCompat="@drawable/ic_work" />
+
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphCardView
+        android:id="@+id/cardView4"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin4"
-        android:layout_marginTop="@dimen/margin4"
-        android:background="@drawable/stroke_style"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="@string/EndDate"
-        android:paddingTop="@dimen/margin4"
-        android:paddingBottom="@dimen/margin4"
-        android:textSize="18sp"
-        float:layout_constraintEnd_toStartOf="@+id/editTextEndTime"
+        android:layout_height="0dp"
+        float:layout_constraintBottom_toTopOf="@+id/guideline7"
+        float:layout_constraintEnd_toEndOf="parent"
+        float:layout_constraintStart_toEndOf="@+id/textView6"
+        float:layout_constraintTop_toBottomOf="@+id/cardView2"
+        float:neumorph_shadowElevation="4dp"
+        float:neumorph_shapeAppearance="@style/CustomShapeAppearance">
+
+        <EditText
+            android:id="@+id/inputDetails"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin4"
+            android:layout_marginRight="@dimen/margin4"
+            android:background="@drawable/default_edit_text_background"
+            android:gravity="start"
+            android:hint="@string/details"
+            android:inputType="textMultiLine"
+            android:paddingTop="@dimen/margin4"
+            android:paddingBottom="@dimen/margin4"
+            android:textSize="18sp" />
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphCardView
+        android:id="@+id/cardView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        float:layout_constraintBottom_toTopOf="@+id/guideline9"
+        float:layout_constraintEnd_toStartOf="@+id/neumorphCardView"
         float:layout_constraintHorizontal_bias="0.5"
         float:layout_constraintStart_toStartOf="parent"
-        float:layout_constraintTop_toBottomOf="@+id/textView9" />
+        float:layout_constraintTop_toBottomOf="@+id/textView7"
+        float:neumorph_shadowElevation="4dp"
+        float:neumorph_shapeAppearance="@style/CustomShapeAppearance">
 
-    <EditText
-        android:id="@+id/inputTitle"
+        <TextView
+            android:id="@+id/editTextBeginDate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin4"
+            android:layout_marginRight="@dimen/margin4"
+            android:background="@drawable/default_edit_text_background"
+            android:ems="10"
+            android:gravity="center"
+            android:paddingBottom="@dimen/margin4"
+            android:textSize="18sp" />
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphCardView
+        android:id="@+id/neumorphCardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        float:layout_constraintBottom_toTopOf="@+id/guideline9"
+        float:layout_constraintEnd_toEndOf="parent"
+        float:layout_constraintHorizontal_bias="0.5"
+        float:layout_constraintStart_toEndOf="@+id/cardView3"
+        float:layout_constraintTop_toBottomOf="@+id/textView7"
+        float:neumorph_shadowElevation="4dp"
+        float:neumorph_shapeAppearance="@style/CustomShapeAppearance">
+
+        <TextView
+            android:id="@+id/editTextBeginTime"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin4"
+            android:layout_marginRight="@dimen/margin4"
+            android:background="@drawable/default_edit_text_background"
+            android:ems="10"
+            android:gravity="center"
+            android:textSize="18sp" />
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphCardView
+        android:id="@+id/neumorphCardView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        float:layout_constraintBottom_toTopOf="@+id/guideline10"
+        float:layout_constraintEnd_toStartOf="@+id/neumorphCardView3"
+        float:layout_constraintHorizontal_bias="0.5"
+        float:layout_constraintStart_toStartOf="parent"
+        float:layout_constraintTop_toBottomOf="@+id/textView9"
+        float:neumorph_shadowElevation="4dp"
+        float:neumorph_shapeAppearance="@style/CustomShapeAppearance">
+
+        <TextView
+            android:id="@+id/editTextEndDate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin4"
+            android:layout_marginRight="@dimen/margin4"
+            android:background="@drawable/default_edit_text_background"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/EndDate"
+            android:textSize="18sp" />
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphCardView
+        android:id="@+id/neumorphCardView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        float:layout_constraintBottom_toTopOf="@+id/guideline10"
+        float:layout_constraintEnd_toEndOf="parent"
+        float:layout_constraintHorizontal_bias="0.5"
+        float:layout_constraintStart_toEndOf="@+id/neumorphCardView2"
+        float:layout_constraintTop_toBottomOf="@+id/textView9"
+        float:neumorph_shadowElevation="4dp"
+        float:neumorph_shapeAppearance="@style/CustomShapeAppearance">
+
+        <TextView
+            android:id="@+id/editTextEndTime"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin4"
+            android:layout_marginRight="@dimen/margin4"
+            android:background="@drawable/default_edit_text_background"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/EndTime"
+            android:textSize="18sp" />
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphCardView
+        android:id="@+id/cardView2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin4"
-        android:layout_marginRight="@dimen/margin4"
-        android:background="@drawable/stroke_style"
-        android:ems="10"
-        android:fontFamily="sans-serif"
-        android:gravity="start"
-        android:hint="@string/todoName"
-        android:inputType="textPersonName"
-        android:paddingLeft="@dimen/margin4"
-        android:paddingTop="@dimen/margin4"
-        android:paddingBottom="@dimen/margin4"
-        android:textSize="18sp"
         float:layout_constraintEnd_toEndOf="parent"
         float:layout_constraintHorizontal_bias="0.5"
         float:layout_constraintStart_toEndOf="@+id/textView"
-        float:layout_constraintTop_toTopOf="@+id/guideline11" />
+        float:layout_constraintTop_toTopOf="@+id/guideline11"
+        float:neumorph_shadowElevation="4dp"
+        float:neumorph_shapeAppearance="@style/CustomShapeAppearance">
 
-    <EditText
-        android:id="@+id/inputDetails"
+        <EditText
+            android:id="@+id/inputTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin4"
+            android:layout_marginRight="@dimen/margin4"
+            android:background="@drawable/default_edit_text_background"
+            android:fontFamily="sans-serif"
+            android:gravity="start"
+            android:hint="@string/todoName"
+            android:inputType="textPersonName"
+            android:paddingTop="@dimen/margin4"
+            android:paddingBottom="@dimen/margin4"
+            android:textSize="18sp" />
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphButton
+        style="@style/Widget.Neumorph.Button"
+        android:id="@+id/btn_cancel"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginLeft="@dimen/margin4"
-        android:layout_marginTop="@dimen/margin4"
-        android:layout_marginRight="@dimen/margin4"
-        android:background="@drawable/stroke_style"
-        android:gravity="start"
-        android:hint="@string/details"
-        android:inputType="textMultiLine"
-        android:paddingLeft="@dimen/margin4"
-        android:paddingTop="@dimen/margin4"
-        android:paddingBottom="@dimen/margin4"
-        android:textSize="18sp"
-        float:layout_constraintBottom_toTopOf="@+id/guideline7"
-        float:layout_constraintEnd_toEndOf="parent"
-        float:layout_constraintHorizontal_bias="0.5"
-        float:layout_constraintStart_toEndOf="@+id/textView6"
-        float:layout_constraintTop_toBottomOf="@+id/inputTitle" />
-
-    <Button
-        android:id="@+id/btn_cancel"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin4"
+        android:gravity="center"
         android:paddingTop="@dimen/margin4"
         android:paddingBottom="@dimen/margin4"
         android:text="取消"
@@ -81,14 +279,18 @@
         float:layout_constraintBottom_toTopOf="@+id/guideline8"
         float:layout_constraintEnd_toStartOf="@+id/btn_ok"
         float:layout_constraintHorizontal_bias="0.5"
-        float:layout_constraintStart_toStartOf="parent" />
+        float:layout_constraintStart_toStartOf="parent"
+        float:layout_constraintTop_toTopOf="@+id/guideline12"
+        float:neumorph_shadowElevation="4dp"
+        float:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
 
-    <Button
+    <soup.neumorphism.NeumorphButton
         android:id="@+id/btn_ok"
+        style="@style/Widget.Neumorph.Button"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin4"
+        android:layout_height="0dp"
         android:layout_marginRight="@dimen/margin4"
+        android:gravity="center"
         android:paddingTop="@dimen/margin4"
         android:paddingBottom="@dimen/margin4"
         android:text="确定"
@@ -97,7 +299,10 @@
         float:layout_constraintBottom_toTopOf="@+id/guideline8"
         float:layout_constraintEnd_toEndOf="parent"
         float:layout_constraintHorizontal_bias="0.5"
-        float:layout_constraintStart_toEndOf="@+id/btn_cancel" />
+        float:layout_constraintStart_toEndOf="@+id/btn_cancel"
+        float:layout_constraintTop_toTopOf="@+id/guideline12"
+        float:neumorph_shadowElevation="4dp"
+        float:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline7"
@@ -129,115 +334,59 @@
         float:layout_constraintStart_toStartOf="parent"
         float:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/editTextBeginDate"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin4"
-        android:layout_marginTop="@dimen/margin4"
-        android:background="@drawable/stroke_style"
-        android:ems="10"
-        android:gravity="center"
-        android:paddingTop="@dimen/margin4"
-        android:paddingBottom="@dimen/margin4"
-        android:textSize="18sp"
-        float:layout_constraintEnd_toStartOf="@+id/editTextBeginTime"
-        float:layout_constraintHorizontal_bias="0.5"
-        float:layout_constraintStart_toStartOf="parent"
-        float:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-    <TextView
-        android:id="@+id/editTextBeginTime"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin4"
-        android:layout_marginTop="@dimen/margin4"
-        android:layout_marginRight="@dimen/margin4"
-        android:background="@drawable/stroke_style"
-        android:ems="10"
-        android:gravity="center"
-        android:paddingTop="@dimen/margin4"
-        android:paddingBottom="@dimen/margin4"
-        android:textSize="18sp"
-        float:layout_constraintEnd_toEndOf="parent"
-        float:layout_constraintHorizontal_bias="0.5"
-        float:layout_constraintStart_toEndOf="@+id/editTextBeginDate"
-        float:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-    <TextView
-        android:id="@+id/editTextEndTime"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin4"
-        android:layout_marginTop="@dimen/margin4"
-        android:layout_marginRight="@dimen/margin4"
-        android:background="@drawable/stroke_style"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="@string/EndTime"
-        android:paddingTop="@dimen/margin4"
-        android:paddingBottom="@dimen/margin4"
-        android:textSize="18sp"
-        float:layout_constraintEnd_toEndOf="parent"
-        float:layout_constraintHorizontal_bias="0.5"
-        float:layout_constraintStart_toEndOf="@+id/editTextEndDate"
-        float:layout_constraintTop_toBottomOf="@+id/textView9" />
-
     <soup.neumorphism.NeumorphTextView
-        style="@style/Widget.Neumorph.TextView"
         android:id="@+id/textView"
+        style="@style/Widget.Neumorph.TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin4"
-        android:layout_marginTop="@dimen/margin4"
         android:text="@string/todoName"
         android:textColor="@color/black"
         android:textSize="18sp"
-        float:layout_constraintEnd_toStartOf="@+id/inputTitle"
+        float:layout_constraintBottom_toBottomOf="@+id/cardView2"
+        float:layout_constraintEnd_toStartOf="@+id/cardView2"
         float:layout_constraintHorizontal_bias="0.5"
         float:layout_constraintStart_toStartOf="parent"
-        float:layout_constraintTop_toTopOf="@+id/guideline11" />
+        float:layout_constraintTop_toTopOf="@+id/cardView2" />
 
     <soup.neumorphism.NeumorphTextView
-        style="@style/Widget.Neumorph.TextView"
         android:id="@+id/textView6"
+        style="@style/Widget.Neumorph.TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin4"
-        android:layout_marginTop="@dimen/margin4"
+        android:layout_marginTop="24dp"
         android:text="@string/details"
         android:textColor="@color/black"
         android:textSize="18sp"
-        float:layout_constraintEnd_toStartOf="@+id/inputDetails"
-        float:layout_constraintHorizontal_bias="0.5"
         float:layout_constraintStart_toStartOf="parent"
-        float:layout_constraintTop_toTopOf="@+id/inputDetails" />
+        float:layout_constraintTop_toTopOf="@+id/cardView4" />
 
     <soup.neumorphism.NeumorphTextView
-        style="@style/Widget.Neumorph.TextView"
         android:id="@+id/textView7"
+        style="@style/Widget.Neumorph.TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin4"
         android:layout_marginTop="@dimen/margin4"
         android:text="@string/beginTime"
         android:textColor="@color/black"
         android:textSize="18sp"
-        float:layout_constraintStart_toStartOf="parent"
-        float:layout_constraintTop_toTopOf="@+id/guideline7" />
+        float:layout_constraintBottom_toTopOf="@+id/guideline9"
+        float:layout_constraintStart_toStartOf="@+id/textView6"
+        float:layout_constraintTop_toTopOf="@+id/guideline7"
+        float:layout_constraintVertical_bias="0.0" />
 
     <soup.neumorphism.NeumorphTextView
-        style="@style/Widget.Neumorph.TextView"
         android:id="@+id/textView9"
+        style="@style/Widget.Neumorph.TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin4"
         android:layout_marginTop="@dimen/margin4"
         android:text="@string/EndTime"
         android:textColor="@color/black"
         android:textSize="18sp"
-        float:layout_constraintStart_toStartOf="parent"
-        float:layout_constraintTop_toBottomOf="@+id/editTextBeginDate" />
+        float:layout_constraintStart_toStartOf="@+id/textView6"
+        float:layout_constraintTop_toTopOf="@+id/guideline9" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline8"
@@ -246,86 +395,26 @@
         android:orientation="horizontal"
         float:layout_constraintGuide_percent="0.9" />
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        float:layout_constraintEnd_toEndOf="parent"
-        float:layout_constraintStart_toStartOf="parent"
-        float:layout_constraintTop_toBottomOf="@+id/editTextEndDate">
-
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:text="@string/exercise" />
-
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:text="@string/sleep" />
-
-        <RadioButton
-            android:id="@+id/radioButton3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:checked="true"
-            android:text="@string/work" />
-
-        <RadioButton
-            android:id="@+id/radioButton4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
-            android:text="@string/entertaiment" />
-    </RadioGroup>
-
-    <RadioGroup
-        android:id="@+id/radioGroup2"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        float:layout_constraintEnd_toEndOf="parent"
-        float:layout_constraintStart_toStartOf="parent"
-        float:layout_constraintTop_toBottomOf="@+id/radioGroup">
+        float:layout_constraintGuide_percent="0.5" />
 
-        <ImageView
-            android:id="@+id/imageViewExercise"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="36dp"
-            float:srcCompat="@drawable/ic_exercise" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        float:layout_constraintGuide_percent="0.65" />
 
-        <ImageView
-            android:id="@+id/imageViewLive"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="36dp"
-            float:srcCompat="@drawable/ic__28_sleeping" />
-
-        <ImageView
-            android:id="@+id/imageViewWrok"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="36dp"
-            float:srcCompat="@drawable/ic_reading" />
-
-        <ImageView
-            android:id="@+id/imageViewGame"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="36dp"
-            android:layout_marginRight="36dp"
-            float:srcCompat="@drawable/ic_game" />
-
-    </RadioGroup>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        float:layout_constraintGuide_percent="0.8" />
 
     <!--    <View-->
     <!--        android:layout_width="match_parent"-->

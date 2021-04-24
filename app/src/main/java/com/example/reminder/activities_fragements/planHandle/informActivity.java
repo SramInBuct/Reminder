@@ -11,12 +11,14 @@ import android.widget.DatePicker;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.reminder.R;
 import com.example.reminder.activities_fragements.fragements.planFragment;
+import com.example.reminder.activities_fragements.mineHandle.loginActivity;
 import com.example.reminder.entities.Event;
 import com.example.reminder.util.EventDao;
 
@@ -112,9 +114,9 @@ public class informActivity extends AppCompatActivity {
         int id = rdp.getCheckedRadioButtonId();
         switch (id){
             case R.id.radioButton: return R.drawable.ic_exercise;
-            case R.id.radioButton2: return R.drawable.ic__28_sleeping;
-            case R.id.radioButton3: return R.drawable.ic_reading;
-            case R.id.radioButton4: return R.drawable.ic_game;
+            case R.id.radioButton2: return R.drawable.ic_rest;
+            case R.id.radioButton3: return R.drawable.ic_studying;
+            case R.id.radioButton4: return R.drawable.ic_work;
         }
         return R.drawable.ic_mine;
     }
@@ -154,6 +156,10 @@ public class informActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String title= String.valueOf(inputTitle.getText());
+                if(title.length()==0){
+                    Toast.makeText(informActivity.this,"请输入计划名称",Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 String details=String.valueOf(inputDetails.getText());
                 Event event=new Event();
                 event.setBeginDate(beginDateInput);

@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
     <soup.neumorphism.NeumorphCardView
+        android:id="@+id/neumorphCardView4"
         style="@style/ShapeAppearance.Neumorph.Button"
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -22,7 +23,7 @@
         <!--        app:neumorph_strokeWidth="1dp">-->
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="357dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <androidx.constraintlayout.widget.Guideline
@@ -31,15 +32,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.24" />
-
-            <ImageView
-                android:id="@+id/deleteButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_delete" />
 
             <ImageView
                 android:id="@+id/planImageView"
@@ -55,11 +47,9 @@
                 android:id="@+id/planText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="4dp"
                 android:ellipsize="end"
-                android:ems="9"
-                android:maxEms="11"
+                android:ems="8"
+                android:maxEms="8"
                 android:maxLines="1"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -73,8 +63,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ellipsize="end"
-                android:ems="13"
-                android:maxEms="13"
+                android:ems="11"
+                android:maxEms="11"
                 android:maxLines="1"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toTopOf="@+id/timeText"
@@ -86,24 +76,38 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
-                android:ems="15"
-                android:maxEms="15"
+                android:ems="10"
+                android:maxEms="10"
                 android:maxLines="1"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
                 app:layout_constraintTop_toBottomOf="@+id/detailText" />
 
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:srcCompat="@drawable/ic_checked" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </soup.neumorphism.NeumorphCardView>
+
+    <ImageView
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/neumorphCardView4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_delete" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/neumorphCardView4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_checked" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

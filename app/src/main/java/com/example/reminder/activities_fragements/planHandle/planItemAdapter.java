@@ -84,18 +84,22 @@ public class planItemAdapter extends ArrayAdapter<Event> {
         planDetails.setText(planItem.getDescribe());
 
         Date date=planItem.getEndDate();
-        int year=date.getYear();
-        int month=date.getMonth();
-        int day=date.getDay();
-        int hour=date.getHours();
-        int minute=date.getMinutes();
-        final StringBuffer date_default = new StringBuffer();
-        final StringBuffer time_default = new StringBuffer();
-        date_default.append(year + "年" + (month+1) + "月" + day +"日");
-        time_default.append(hour + "点" + minute+"分");
-        TextView dateText=view.findViewById(R.id.timeText);
-        dateText.setText(date_default.append(time_default));
+        TextView dateText = view.findViewById(R.id.timeText);
+        if(date.equals(planItem.getBeginDate())) {
+            dateText.setText("");
+        }else{
+            int year = date.getYear();
+            int month = date.getMonth();
+            int day = date.getDay();
+            int hour = date.getHours();
+            int minute = date.getMinutes();
+            final StringBuffer date_default = new StringBuffer();
+            final StringBuffer time_default = new StringBuffer();
+            date_default.append(year + "年" + (month + 1) + "月" + day + "日");
+            time_default.append(hour + "点" + minute + "分");
 
+            dateText.setText(date_default.append(time_default));
+        }
         return view;
     }
 }
