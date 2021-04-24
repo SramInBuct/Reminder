@@ -7,6 +7,23 @@
     android:background="@color/Background"
     android:backgroundTint="@color/Background">
 
+    <soup.neumorphism.NeumorphButton
+        android:id="@+id/button_login2"
+        style="@style/Widget.Neumorph.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin4"
+        android:padding="@dimen/margin4"
+        android:text="@string/login"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline14"
+        app:neumorph_shadowElevation="4dp"
+        app:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
+
     <soup.neumorphism.NeumorphCardView
         android:id="@+id/neumorphCardView5"
         android:layout_width="wrap_content"
@@ -31,6 +48,7 @@
     </soup.neumorphism.NeumorphCardView>
 
     <soup.neumorphism.NeumorphCardView
+        android:id="@+id/neumorphCardView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/button_login"
@@ -88,5 +106,17 @@
         app:layout_constraintTop_toTopOf="@+id/guideline14"
         app:neumorph_shadowElevation="4dp"
         app:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
+
+    <TextView
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Register2"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_login2"
+        app:layout_constraintVertical_bias="0.3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 package com.example.reminder.activities_fragments.mineHandle;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -46,10 +47,11 @@ public class LoginActivity extends AppCompatActivity {
                             case 2:
                                 SharedPreferences login = getSharedPreferences("login", Context.MODE_PRIVATE);
                                 ArrayList<String> inform = (ArrayList<String>) msg.obj;
-                                login.edit().putString("token",inform.get(0)).commit();
-                                login.edit().putString("name",inform.get(1)).commit();
+                                login.edit().putString("token",inform.get(0)).apply();
+                                login.edit().putString("name",inform.get(1)).apply();
                                 Toast.makeText(LoginActivity.this,"登陆成功",Toast.LENGTH_SHORT).show();
                                 Log.d("Login", "handleMessage: 登录成功");
+                                View btn = findViewById(R.id.loginButton);
                                 LoginActivity.this.finish();
 
                                 break;
@@ -68,6 +70,15 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 Log.d("SharedPreferences","token->"+getSharedPreferences("login", Context.MODE_PRIVATE).getString("token","null"));
                 Log.d("SharedPreferences","name->"+getSharedPreferences("login", Context.MODE_PRIVATE).getString("name","null"));
+            }
+        });
+
+        View register=findViewById(R.id.register);
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in=new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(in);
             }
         });
         }

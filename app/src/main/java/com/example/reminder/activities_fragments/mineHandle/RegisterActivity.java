@@ -56,8 +56,6 @@ public class RegisterActivity extends AppCompatActivity {
                                 login.edit().putString("token",(String)msg.obj).commit();
                                 Toast.makeText(RegisterActivity.this,"注册成功",Toast.LENGTH_SHORT).show();
                                 RegisterActivity.this.finish();
-                                Intent in=new Intent(RegisterActivity.this, LoginActivity.class);
-                                startActivity(in);
                                 break;
                             case 4:
                                 Log.d(TAG,"handleMessage:"+msg.obj.toString());

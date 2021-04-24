@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
             bundle = new Bundle();
 
         bundle.putString("token",getSharedPreferences("login",Context.MODE_PRIVATE).getString("token",null));
+        bundle.putString("name",getSharedPreferences("login",Context.MODE_PRIVATE).getString("name",null));
+
         vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
         navController = Navigation.findNavController(this,R.id.fragment);
         MotionLayout mine = findViewById(R.id.motionLayoutMine);
@@ -55,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         MotionLayout study = findViewById(R.id.motionLayoutStudy);
         MotionLayout classtable = findViewById(R.id.motionLayoutClasstable);
         MotionLayout chart = findViewById(R.id.motionLayoutChart);
-        mine.setOnClickListener(v -> navController.navigate(R.id.mineFragment));
+        mine.setOnClickListener(v -> navController.navigate(R.id.mineFragment,bundle));
         plan.setOnClickListener(v -> navController.navigate(R.id.planFragment));
         classtable.setOnClickListener(v -> navController.navigate(R.id.classtableFragment));
         study.setOnClickListener(v -> {
