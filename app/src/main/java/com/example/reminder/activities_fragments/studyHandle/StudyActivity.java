@@ -37,6 +37,7 @@ public class StudyActivity extends AppCompatActivity {
         webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
         webView.getSettings().setAllowContentAccess(true);
         WebView.setWebContentsDebuggingEnabled(true);
+        webView.getSettings().setMediaPlaybackRequiresUserGesture(false);
         Intent intent = getIntent();
         Bundle bundle = intent.getBundleExtra("bundle");
         String token = bundle.getString("token");

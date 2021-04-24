@@ -13,6 +13,7 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +29,11 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        TextView title = findViewById(R.id.ActionBarTitle);
+        title.setText("");
+        ImageButton back = findViewById(R.id.back);
+        back.setOnClickListener(v -> onBackPressed());
+
         TextView username=findViewById(R.id.registerUsername);
         TextView account=findViewById(R.id.registerAccount);
         TextView password=findViewById(R.id.registerPassword);

@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.reminder.R;
 import com.example.reminder.activities_fragments.studyHandle.ClockActivity;
@@ -38,6 +39,13 @@ public class studyFragment extends Fragment {
                 Intent in=new Intent(getActivity(), StudyActivity.class);
                 in.putExtra("bundle",getArguments());
                 startActivity(in);
+            }
+        });
+        View more = view.findViewById(R.id.neumorphCardViewMore);
+        more.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(),"敬请期待",Toast.LENGTH_SHORT).show();
             }
         });
         return view;

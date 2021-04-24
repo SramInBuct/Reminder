@@ -24,6 +24,8 @@
         app:neumorph_shadowElevation="4dp"
         app:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
 
+    <include layout="@layout/reminder_actionbar" />
+
     <soup.neumorphism.NeumorphCardView
         android:id="@+id/neumorphCardView5"
         android:layout_width="wrap_content"
