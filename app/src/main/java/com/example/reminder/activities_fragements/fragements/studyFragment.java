@@ -38,6 +38,7 @@ public class studyFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent in=new Intent(getActivity(), StudyActivity.class);
+                in.putExtra("bundle",getArguments());
                 startActivity(in);
             }
         });

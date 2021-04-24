@@ -5,6 +5,7 @@ import androidx.constraintlayout.motion.widget.MotionLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -13,18 +14,40 @@ import android.widget.ImageView;
 
 import org.litepal.LitePal;
 
+import java.util.HashMap;
+
 public class MainActivity extends AppCompatActivity {
     Vibrator vibrator;
+
+    private Bundle bundle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SQLiteDatabase db = LitePal.getDatabase();
         setContentView(R.layout.activity_main);
-        navShow();
+        navShow(savedInstanceState);
+        if (savedInstanceState!=null) {
+            savedInstanceState.putBundle("bundle",bundle);
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (bundle.getString("token") == null) {
+            bundle.putString("token",getSharedPreferences("login",Context.MODE_PRIVATE).getString("token",null));
+        }
     }
 
     private NavController navController;
-    void navShow(){
+    void navShow(Bundle savedInstanceState){
+        bundle = savedInstanceState==null?null:savedInstanceState.getBundle("bundle");
+        if (bundle == null)
+            bundle = new Bundle();
+
+        bundle.putString("token",getSharedPreferences("login",Context.MODE_PRIVATE).getString("token",null));
         vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
         navController = Navigation.findNavController(this,R.id.fragment);
         MotionLayout mine = findViewById(R.id.motionLayoutMine);
@@ -35,7 +58,9 @@ public class MainActivity extends AppCompatActivity {
         mine.setOnClickListener(v -> navController.navigate(R.id.mineFragment));
         plan.setOnClickListener(v -> navController.navigate(R.id.planFragment));
         classtable.setOnClickListener(v -> navController.navigate(R.id.classtableFragment));
-        study.setOnClickListener(v -> navController.navigate(R.id.studyFragment));
+        study.setOnClickListener(v -> {
+            navController.navigate(R.id.studyFragment, bundle);
+        });
         chart.setOnClickListener(v -> navController.navigate(R.id.chartFragment));
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
             vibrator.vibrate(60);
@@ -44,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
             study.setProgress(0f);
             classtable.setProgress(0f);
             chart.setProgress(0f);
+
             if (destination.getId()==R.id.mineFragment) {
                 mine.transitionToEnd();
             }

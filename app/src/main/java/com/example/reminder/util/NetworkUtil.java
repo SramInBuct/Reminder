@@ -14,6 +14,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -177,6 +178,7 @@ public class NetworkUtil {
                 String result = response.body().string();//string不能调用两次 被调用一次就关闭了，这里调用两次会报异常
                 String token = null;
                 String status = null;
+                String name = null;
                 Object msg;
                 JSONObject js;
                 try {
@@ -192,7 +194,11 @@ public class NetworkUtil {
                     else{
                         msg = js.getJSONObject("msg");
                         token =((JSONObject)msg).getString("token");
-                        message.obj = token;
+                        name = ((JSONObject) msg).getString("name");
+                        ArrayList<String> inform = new ArrayList<String>();
+                        inform.add(token);
+                        inform.add(name);
+                        message.obj = inform;
                         Log.d(TAG, "onResponse->token: " + message.obj.toString());
 
                     }

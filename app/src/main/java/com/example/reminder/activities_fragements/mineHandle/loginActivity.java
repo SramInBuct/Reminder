@@ -21,6 +21,8 @@ import com.example.reminder.util.NetworkUtil;
 
 import org.json.JSONException;
 
+import java.util.ArrayList;
+
 public class loginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +45,9 @@ public class loginActivity extends AppCompatActivity {
                                 break;
                             case 2:
                                 SharedPreferences login = getSharedPreferences("login", Context.MODE_PRIVATE);
-                                login.edit().putString("token",(String)msg.obj).commit();
+                                ArrayList<String> inform = (ArrayList<String>) msg.obj;
+                                login.edit().putString("token",inform.get(0)).commit();
+                                login.edit().putString("name",inform.get(1)).commit();
                                 Log.d("Login", "handleMessage: 登录成功");
 
                                 break;
@@ -61,6 +65,7 @@ public class loginActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 Log.d("SharedPreferences","token->"+getSharedPreferences("login", Context.MODE_PRIVATE).getString("token","null"));
+                Log.d("SharedPreferences","name->"+getSharedPreferences("login", Context.MODE_PRIVATE).getString("name","null"));
             }
         });
         }
