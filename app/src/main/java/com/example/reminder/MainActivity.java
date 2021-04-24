@@ -6,11 +6,14 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import com.example.reminder.activities_fragments.mineHandle.LoginActivity;
 
 import org.litepal.LitePal;
 
@@ -47,7 +50,9 @@ public class MainActivity extends AppCompatActivity {
         if (bundle == null)
             bundle = new Bundle();
 
-        bundle.putString("token",getSharedPreferences("login",Context.MODE_PRIVATE).getString("token",null));
+        String token = getSharedPreferences("login",Context.MODE_PRIVATE).getString("token",null);
+        bundle.putString("token",token);
+
         bundle.putString("name",getSharedPreferences("login",Context.MODE_PRIVATE).getString("name",null));
 
         vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
@@ -85,5 +90,10 @@ public class MainActivity extends AppCompatActivity {
                 chart.transitionToEnd();
             }
         });
+
+        if (token == null) {
+            Intent in = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(in);
+        }
     }
 }

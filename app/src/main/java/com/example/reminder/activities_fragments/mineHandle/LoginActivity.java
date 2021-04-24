@@ -10,6 +10,7 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,13 +30,30 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activiity_login);
+        TextView title = findViewById(R.id.ActionBarTitle);
+        title.setText("");
+        ImageButton back = findViewById(R.id.back);
+        back.setOnClickListener(v -> onBackPressed());
+
         TextView account=findViewById(R.id.editTextAccount);
         TextView password=findViewById(R.id.editTextTextPassword);
         Button ok=findViewById(R.id.button_login);
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                User user=new User(account.getText().toString(),password.getText().toString());
+                String accountS = account.getText().toString();
+                String passwordS = password.getText().toString();
+                if (accountS.isEmpty()) {
+                    Toast.makeText(LoginActivity.this,"请输入账号",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (passwordS.isEmpty()) {
+                    Toast.makeText(LoginActivity.this,"请输入密码",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+
+                User user=new User(accountS,passwordS);
                 Handler handler = new Handler(Looper.myLooper()) {
                     @Override
                     public void handleMessage(@NonNull Message msg) {

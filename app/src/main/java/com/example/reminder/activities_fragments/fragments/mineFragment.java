@@ -26,7 +26,7 @@ public class mineFragment extends Fragment {
         TextView textView=view.findViewById(R.id.headText);
         String token = getArguments().getString("token");
         String name  = getArguments().getString("name");
-        if(!token.isEmpty()){
+        if(token != null && !token.isEmpty()){
             textView.setText(name);
         }
 
@@ -34,7 +34,7 @@ public class mineFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if(token.isEmpty()) {
+                if(token == null || token.isEmpty()) {
                     Intent in = new Intent(getActivity(), LoginActivity.class);
                     startActivity(in);
                 }else{

@@ -8,38 +8,103 @@
     tools:context="com.example.reminder.activities_fragments.fragments.studyFragment">
 
     <soup.neumorphism.NeumorphCardView
-        style="@style/Widget.Neumorph.Button"
         android:id="@+id/neumorphCardViewStudy"
+        style="@style/Widget.Neumorph.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/neumorphCardViewClock"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25">
 
         <ImageView
             android:id="@+id/imageView8"
-            android:layout_width="160dp"
-            android:layout_height="160dp"
+            android:layout_width="@dimen/length1"
+            android:layout_height="@dimen/length1"
             android:src="@drawable/ic_studyroom" />
+
     </soup.neumorphism.NeumorphCardView>
 
     <soup.neumorphism.NeumorphCardView
-        style="@style/Widget.Neumorph.Button"
         android:id="@+id/neumorphCardViewClock"
+        style="@style/Widget.Neumorph.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/neumorphCardViewStudy"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25">
 
         <ImageView
             android:id="@+id/imageView7"
             android:layout_width="@dimen/length1"
             android:layout_height="@dimen/length1"
             android:src="@drawable/ic_clock" />
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphTextView
+        android:id="@+id/textView11"
+        style="@style/Widget.Neumorph.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="自习室"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/neumorphCardViewStudy"
+        app:layout_constraintStart_toStartOf="@+id/neumorphCardViewStudy"
+        app:layout_constraintTop_toBottomOf="@+id/neumorphCardViewStudy"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <soup.neumorphism.NeumorphTextView
+        android:id="@+id/textView13"
+        style="@style/Widget.Neumorph.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="更多"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/neumorphCardViewStudy"
+        app:layout_constraintStart_toStartOf="@+id/neumorphCardViewStudy"
+        app:layout_constraintTop_toBottomOf="@+id/neumorphCardViewMore"
+        app:layout_constraintVertical_bias="0.100000024" />
+
+    <soup.neumorphism.NeumorphTextView
+        android:id="@+id/textView12"
+        style="@style/Widget.Neumorph.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="番茄钟"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/neumorphCardViewClock"
+        app:layout_constraintStart_toStartOf="@+id/neumorphCardViewClock"
+        app:layout_constraintTop_toBottomOf="@+id/neumorphCardViewClock"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <soup.neumorphism.NeumorphCardView
+        android:id="@+id/neumorphCardViewMore"
+        style="@style/Widget.Neumorph.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/neumorphCardViewClock"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7">
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="@dimen/length1"
+            android:layout_height="@dimen/length1"
+            android:src="@drawable/ic_more" />
     </soup.neumorphism.NeumorphCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
