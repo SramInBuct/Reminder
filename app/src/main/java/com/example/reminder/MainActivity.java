@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (bundle.getString("token") == null) {
             bundle.putString("token",getSharedPreferences("login",Context.MODE_PRIVATE).getString("token",null));
+            bundle.putString("name",getSharedPreferences("login",Context.MODE_PRIVATE).getString("name",null));
         }
     }
 

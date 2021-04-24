@@ -9,14 +9,15 @@
     android:backgroundTint="@color/Background">
 
     <soup.neumorphism.NeumorphCardView
-        float:neumorph_shapeAppearance="@style/CustomShapeAppearance"
-        float:neumorph_shadowElevation="4dp"
+        android:id="@+id/neumorphCardView7"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        float:layout_constraintBottom_toTopOf="@+id/guideline12"
+        float:layout_constraintBottom_toTopOf="@+id/guideline8"
         float:layout_constraintEnd_toEndOf="parent"
         float:layout_constraintStart_toStartOf="parent"
-        float:layout_constraintTop_toTopOf="@+id/guideline10">
+        float:layout_constraintTop_toTopOf="@+id/guideline12"
+        float:neumorph_shadowElevation="4dp"
+        float:neumorph_shapeAppearance="@style/CustomShapeAppearance">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -277,8 +278,8 @@
     </soup.neumorphism.NeumorphCardView>
 
     <soup.neumorphism.NeumorphButton
-        style="@style/Widget.Neumorph.Button"
         android:id="@+id/btn_cancel"
+        style="@style/Widget.Neumorph.Button"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginLeft="@dimen/margin4"
@@ -288,11 +289,12 @@
         android:text="取消"
         android:textSize="18sp"
         float:cornerRadius="6dp"
-        float:layout_constraintBottom_toTopOf="@+id/guideline8"
+        float:layout_constraintBottom_toTopOf="@+id/guideline25"
         float:layout_constraintEnd_toStartOf="@+id/btn_ok"
         float:layout_constraintHorizontal_bias="0.5"
         float:layout_constraintStart_toStartOf="parent"
-        float:layout_constraintTop_toTopOf="@+id/guideline12"
+        float:layout_constraintTop_toTopOf="@+id/guideline8"
+        float:layout_constraintVertical_bias="0.0"
         float:neumorph_shadowElevation="4dp"
         float:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
 
@@ -308,11 +310,11 @@
         android:text="确定"
         android:textSize="18sp"
         float:cornerRadius="6dp"
-        float:layout_constraintBottom_toTopOf="@+id/guideline8"
+        float:layout_constraintBottom_toTopOf="@+id/guideline25"
         float:layout_constraintEnd_toEndOf="parent"
         float:layout_constraintHorizontal_bias="0.5"
         float:layout_constraintStart_toEndOf="@+id/btn_cancel"
-        float:layout_constraintTop_toTopOf="@+id/guideline12"
+        float:layout_constraintTop_toTopOf="@+id/guideline8"
         float:neumorph_shadowElevation="4dp"
         float:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
 
@@ -389,6 +391,19 @@
         float:layout_constraintVertical_bias="0.0" />
 
     <soup.neumorphism.NeumorphTextView
+        android:id="@+id/textView10"
+        style="@style/Widget.Neumorph.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/frequency"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        float:layout_constraintBottom_toTopOf="@+id/guideline12"
+        float:layout_constraintEnd_toEndOf="@+id/textView9"
+        float:layout_constraintStart_toStartOf="@+id/textView9"
+        float:layout_constraintTop_toTopOf="@+id/guideline10" />
+
+    <soup.neumorphism.NeumorphTextView
         android:id="@+id/textView9"
         style="@style/Widget.Neumorph.TextView"
         android:layout_width="wrap_content"
@@ -405,7 +420,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        float:layout_constraintGuide_percent="0.9" />
+        float:layout_constraintGuide_percent="0.87" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline9"
@@ -426,7 +441,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        float:layout_constraintGuide_percent="0.8" />
+        float:layout_constraintGuide_percent="0.72" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:entries="@array/item"
+        android:textAlignment="center"
+        float:layout_constraintBottom_toTopOf="@+id/guideline12"
+        float:layout_constraintEnd_toEndOf="parent"
+        float:layout_constraintStart_toEndOf="@+id/textView10"
+        float:layout_constraintTop_toTopOf="@+id/guideline10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        float:layout_constraintGuide_percent="0.97" />
 
     <!--    <View-->
     <!--        android:layout_width="match_parent"-->
