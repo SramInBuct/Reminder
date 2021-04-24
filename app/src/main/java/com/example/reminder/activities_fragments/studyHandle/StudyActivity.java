@@ -1,9 +1,15 @@
 package com.example.reminder.activities_fragments.studyHandle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.webkit.PermissionRequest;
+import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -45,14 +51,21 @@ public class StudyActivity extends AppCompatActivity {
             }
         });
 
+        requestPermission();
+        webView.setWebChromeClient(new WebChromeClient(){
+            @Override
+            public void onPermissionRequest(PermissionRequest request) {   //webview自带录音授权(重点!!!)
+                request.grant(request.getResources());
+            }
+        });
+
+
     }
 
-//    @Nullable
-//    @Override
-//    public View onCreateView(@NonNull String name, @NonNull Context context, @NonNull AttributeSet attrs) {
-//
+    private void requestPermission(){
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)!= PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO}, 0);
+        }
+    }
 
-//
-//        return super.onCreateView(name, context, attrs);
-//    }
 }
