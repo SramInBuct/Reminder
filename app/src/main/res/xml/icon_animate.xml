@@ -64,7 +64,7 @@
                 motion:customFloatValue="1" />
             <CustomAttribute
                 motion:attributeName="colorFilter"
-                motion:customColorValue="@color/ThemeColor" />
+                motion:customColorValue="@color/ThemeColorDark" />
         </Constraint>
         <Constraint
             android:id="@+id/TextViewMine"
@@ -76,7 +76,7 @@
             motion:layout_constraintStart_toStartOf="parent" >
             <CustomAttribute
                 motion:attributeName="textColor"
-                motion:customColorValue="@color/ThemeColor" />
+                motion:customColorValue="@color/ThemeColorDark" />
         </Constraint>
     </ConstraintSet>
 </MotionScene>

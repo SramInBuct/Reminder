@@ -5,9 +5,14 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.media.AudioManager;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.webkit.PermissionRequest;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -15,6 +20,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.example.reminder.R;
+import com.example.reminder.util.AudioUtil;
 
 public class StudyActivity extends AppCompatActivity {
     private WebView webView;
@@ -28,9 +34,11 @@ public class StudyActivity extends AppCompatActivity {
         }
     }
 
+    @SuppressLint({"WrongConstant", "SetJavaScriptEnabled"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         setContentView(R.layout.activity_study);
         webView=findViewById(R.id.studyClass);
         webView.getSettings().setJavaScriptEnabled(true);
@@ -53,13 +61,13 @@ public class StudyActivity extends AppCompatActivity {
         });
 
         requestPermission();
+        AudioUtil.choiceAudioModel(getApplicationContext());
         webView.setWebChromeClient(new WebChromeClient(){
             @Override
-            public void onPermissionRequest(PermissionRequest request) {   //webview自带录音授权(重点!!!)
+            public void onPermissionRequest(PermissionRequest request) {   //webview自带录音授权
                 request.grant(request.getResources());
             }
         });
-
 
     }
 
@@ -69,4 +77,9 @@ public class StudyActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        AudioUtil.changeToNormal(getApplicationContext());
+    }
 }

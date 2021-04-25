@@ -27,10 +27,11 @@
                 android:id="@+id/radioGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:layout_marginTop="@dimen/margin4"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
                 android:layout_weight="1"
                 android:orientation="horizontal"
-                float:layout_constraintBottom_toTopOf="@+id/radioGroup2"
+                float:layout_constraintBottom_toBottomOf="parent"
                 float:layout_constraintEnd_toEndOf="parent"
                 float:layout_constraintHorizontal_bias="0.5"
                 float:layout_constraintStart_toStartOf="parent"
@@ -38,89 +39,72 @@
 
                 <RadioButton
                     android:id="@+id/radioButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="36dp"
-                    android:background="@drawable/radio_button"
-                    android:button="@null"
-                    android:gravity="center"
+                    style="@style/reminderRadioButton"
+                    android:drawableTop="@drawable/ic_exercise"
                     android:text="@string/exercise" />
 
                 <RadioButton
                     android:id="@+id/radioButton2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="36dp"
-                    android:background="@drawable/radio_button"
-                    android:button="@null"
-                    android:gravity="center"
+                    style="@style/reminderRadioButton"
+                    android:drawableTop="@drawable/ic_rest"
                     android:text="@string/sleep" />
 
                 <RadioButton
                     android:id="@+id/radioButton3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="36dp"
-                    android:background="@drawable/radio_button"
-                    android:button="@null"
+                    style="@style/reminderRadioButton"
                     android:checked="true"
-                    android:gravity="center"
+                    android:drawableTop="@drawable/ic_studying"
                     android:text="@string/study" />
 
                 <RadioButton
                     android:id="@+id/radioButton4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="36dp"
-                    android:layout_marginRight="36dp"
-                    android:background="@drawable/radio_button"
-                    android:button="@null"
-                    android:gravity="center"
+                    style="@style/reminderRadioButton"
+                    android:drawableTop="@drawable/ic_work"
                     android:text="@string/work" />
             </RadioGroup>
 
-            <RadioGroup
-                android:id="@+id/radioGroup2"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_marginBottom="@dimen/margin4"
-                android:orientation="horizontal"
-                float:layout_constraintBottom_toBottomOf="parent"
-                float:layout_constraintEnd_toEndOf="parent"
-                float:layout_constraintHorizontal_bias="0.5"
-                float:layout_constraintStart_toStartOf="parent"
-                float:layout_constraintTop_toBottomOf="@+id/radioGroup">
+<!--            <RadioGroup-->
+<!--                android:id="@+id/radioGroup2"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="0dp"-->
+<!--                android:layout_marginBottom="@dimen/margin4"-->
+<!--                android:orientation="horizontal"-->
+<!--                float:layout_constraintBottom_toBottomOf="parent"-->
+<!--                float:layout_constraintEnd_toEndOf="parent"-->
+<!--                float:layout_constraintHorizontal_bias="0.5"-->
+<!--                float:layout_constraintStart_toStartOf="parent"-->
+<!--                float:layout_constraintTop_toBottomOf="@+id/radioGroup">-->
 
-                <ImageView
-                    android:id="@+id/imageViewExercise"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="36dp"
-                    float:srcCompat="@drawable/ic_exercise" />
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageViewExercise"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="36dp"-->
+<!--                    float:srcCompat="@drawable/ic_exercise" />-->
 
-                <ImageView
-                    android:id="@+id/imageViewLive"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="36dp"
-                    float:srcCompat="@drawable/ic_rest" />
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageViewLive"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="36dp"-->
+<!--                    float:srcCompat="@drawable/ic_rest" />-->
 
-                <ImageView
-                    android:id="@+id/imageViewWrok"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="36dp"
-                    float:srcCompat="@drawable/ic_studying" />
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageViewWrok"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="36dp"-->
+<!--                    float:srcCompat="@drawable/ic_studying" />-->
 
-                <ImageView
-                    android:id="@+id/imageViewStudy"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="36dp"
-                    android:layout_marginRight="36dp"
-                    float:srcCompat="@drawable/ic_work" />
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageViewStudy"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="36dp"-->
+<!--                    android:layout_marginRight="36dp"-->
+<!--                    float:srcCompat="@drawable/ic_work" />-->
 
-            </RadioGroup>
+<!--            </RadioGroup>-->
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </soup.neumorphism.NeumorphCardView>
@@ -400,8 +384,10 @@
         android:textSize="18sp"
         float:layout_constraintBottom_toTopOf="@+id/guideline12"
         float:layout_constraintEnd_toEndOf="@+id/textView9"
+        float:layout_constraintHorizontal_bias="0.0"
         float:layout_constraintStart_toStartOf="@+id/textView9"
-        float:layout_constraintTop_toTopOf="@+id/guideline10" />
+        float:layout_constraintTop_toTopOf="@+id/guideline10"
+        float:layout_constraintVertical_bias="0.481" />
 
     <soup.neumorphism.NeumorphTextView
         android:id="@+id/textView9"
