@@ -9,7 +9,7 @@ import com.example.reminder.MainActivity;
 import com.example.reminder.R;
 
 public class LoadActivity extends AppCompatActivity {
-    private static int sleepTime=1500;
+    private static int sleepTime=500;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
