@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.reminder.R;
 import com.example.reminder.activities_fragments.fragments.planFragment;
 import com.example.reminder.entities.Event;
+import com.example.reminder.util.AlertUtil;
 import com.example.reminder.util.EventDao;
 
 import java.util.Calendar;
@@ -48,16 +49,6 @@ public class InformActivity extends AppCompatActivity {
         int minute = calendar.get(Calendar.MINUTE);
         final StringBuffer date_default = new StringBuffer();
         final StringBuffer time_default = new StringBuffer();
-        beginDateInput.setYear(year);
-        beginDateInput.setMonth(month);
-        beginDateInput.setDate(day);
-        beginDateInput.setHours(hour);
-        beginDateInput.setMinutes(minute);
-        endDateInput.setYear(year);
-        endDateInput.setMonth(month);
-        endDateInput.setDate(day);
-        endDateInput.setHours(hour);
-        endDateInput.setMinutes(minute);
         date_default.append(year + "年" + (month+1) + "月" + day +"日");
         time_default.append(hour).append("点").append(minute).append("分");
 
@@ -71,11 +62,11 @@ public class InformActivity extends AppCompatActivity {
 
         TextView timeTextBegin=(TextView) findViewById(R.id.editTextBeginTime);
         timeTextBegin.setText(time_default);
-        timeTextBegin.setOnClickListener(v -> showTimePick((TextView) v));
+        timeTextBegin.setOnClickListener(v -> showTimePick((TextView) v,1));
 
         TextView timeTextEnd=(TextView) findViewById(R.id.editTextEndTime);
         timeTextEnd.setText(time_default);
-        timeTextEnd.setOnClickListener(v -> showTimePick((TextView) v));
+        timeTextEnd.setOnClickListener(v -> showTimePick((TextView) v,2));
     }
 
     private void showDatePick(final TextView dateText){
@@ -120,7 +111,7 @@ public class InformActivity extends AppCompatActivity {
         }
         return R.drawable.ic_mine;
     }
-    private void showTimePick(final TextView timeText) {
+    private void showTimePick(final TextView timeText,int id) {
         final StringBuffer time = new StringBuffer();
         //获取Calendar对象，用于获取当前时间
         final Calendar calendar = Calendar.getInstance();
@@ -131,15 +122,16 @@ public class InformActivity extends AppCompatActivity {
             //选择完时间后会调用该回调函数
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                if(timeText.getId()==R.id.editTextBeginDate){
+
+                if(id==1){
                     beginDateInput.setHours(hourOfDay);
                     beginDateInput.setMinutes(minute);
-                }else if(timeText.getId()==R.id.editTextEndTime){
+                }else if(id==2){
                     endDateInput.setHours(hourOfDay);
                     endDateInput.setMinutes(minute);
                 }
 
-                time.append(hourOfDay + "点" + minute+"分");
+                time.append(hourOfDay + "点" + minute + "分");
                 //设置TextView显示最终选择的时间
                 timeText.setText(time);
             }
@@ -151,35 +143,28 @@ public class InformActivity extends AppCompatActivity {
         TextView inputDetails=findViewById(R.id.inputDetails);
         Button btn_ok=findViewById(R.id.btn_ok);
 
-        btn_ok.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.O)
-            @Override
-            public void onClick(View v) {
-                String title= String.valueOf(inputTitle.getText());
-                if(title.length()==0){
-                    Toast.makeText(InformActivity.this,"请输入计划名称",Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                String details=String.valueOf(inputDetails.getText());
-                Event event=new Event();
-                event.setBeginDate(beginDateInput);
-                event.setBeginTime(beginDateInput);
-                event.setEndDate(endDateInput);
-                event.setEndTime(endDateInput);
-                event.setName(title);
-                event.setDescribe(details);
-                event.setIcon_id(getIcon());
-                EventDao.insert(event);
-                planFragment.addList(event);
-                InformActivity.this.finish();
+        btn_ok.setOnClickListener(v -> {
+            String title= String.valueOf(inputTitle.getText());
+            if(title.length()==0){
+                Toast.makeText(InformActivity.this,"请输入计划名称",Toast.LENGTH_SHORT).show();
+                return;
             }
+            String details=String.valueOf(inputDetails.getText());
+            Event event=new Event();
+            event.setBeginDate(beginDateInput);
+            event.setBeginTime(beginDateInput);
+            event.setEndDate(endDateInput);
+            event.setEndTime(endDateInput);
+            event.setName(title);
+            event.setDescribe(details);
+            event.setIcon_id(getIcon());
+            EventDao.insert(event);
+            planFragment.addList(event);
+            //添加事件
+            AlertUtil.Build(this).setAlarm(event);
+            InformActivity.this.finish();
         });
         Button btn_cancel=findViewById(R.id.btn_cancel);
-        btn_cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                InformActivity.this.finish();
-            }
-        });
+        btn_cancel.setOnClickListener(v -> InformActivity.this.finish());
     }
 }

@@ -16,6 +16,7 @@ import android.widget.ImageView;
 
 import com.example.reminder.activities_fragments.loadActivity.LoadActivity;
 import com.example.reminder.activities_fragments.mineHandle.LoginActivity;
+import com.example.reminder.service.RepeatService;
 
 import org.litepal.LitePal;
 
@@ -36,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState!=null) {
             savedInstanceState.putBundle("bundle",bundle);
         }
+
+        Intent startRepeat = new Intent(this, RepeatService.class);
+        startService(startRepeat);
     }
 
     @Override

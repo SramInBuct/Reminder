@@ -17,7 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Draft2"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities_fragments.mineHandle.MineInfoActivity"></activity>
+        <service
+            android:name=".service.RepeatService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".activities_fragments.mineHandle.MineInfoActivity" />
         <activity android:name=".activities_fragments.studyHandle.ClockActivity" />
         <activity android:name=".activities_fragments.studyHandle.StudyActivity" />
         <activity android:name=".activities_fragments.mineHandle.RegisterActivity" />
@@ -26,9 +31,11 @@
             android:name=".service.MasterService"
             android:enabled="true"
             android:exported="true" />
+
         <activity android:name=".activities_fragments.loadActivity.LoadActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -40,17 +47,12 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>
-
-<!--        <activity android:name=".text.TestActivity">-->
-
-<!--            &lt;!&ndash; <intent-filter> &ndash;&gt;-->
-<!--            &lt;!&ndash; <action android:name="android.intent.action.MAIN" /> &ndash;&gt;-->
-
-
-<!--            &lt;!&ndash; <category android:name="android.intent.category.LAUNCHER" /> &ndash;&gt;-->
-<!--            &lt;!&ndash; </intent-filter> &ndash;&gt;-->
-<!--        </activity>-->
+        </activity> <!-- <activity android:name=".text.TestActivity"> -->
+        <!-- &lt;!&ndash; <intent-filter> &ndash;&gt; -->
+        <!-- &lt;!&ndash; <action android:name="android.intent.action.MAIN" /> &ndash;&gt; -->
+        <!-- &lt;!&ndash; <category android:name="android.intent.category.LAUNCHER" /> &ndash;&gt; -->
+        <!-- &lt;!&ndash; </intent-filter> &ndash;&gt; -->
+        <!-- </activity> -->
         <activity android:name=".activities_fragments.planHandle.InformActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />

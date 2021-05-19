@@ -17,6 +17,7 @@ import androidx.appcompat.app.AlertDialog;
 import com.example.reminder.R;
 import com.example.reminder.activities_fragments.fragments.planFragment;
 import com.example.reminder.entities.Event;
+import com.example.reminder.util.AlertUtil;
 import com.example.reminder.util.EventDao;
 
 import java.util.Date;
@@ -41,6 +42,7 @@ public class PlanItemAdapter extends ArrayAdapter<Event> {
             public void onClick(DialogInterface dialogInterface, int i) {
                 EventDao.delete(planItem.getId());
                 planFragment.remove(planItem);
+                AlertUtil.Build(getContext()).cancelAlarm(planItem.getId());
                 notifyDataSetChanged();
             }
         });
@@ -81,19 +83,19 @@ public class PlanItemAdapter extends ArrayAdapter<Event> {
         TextView planDetails=view.findViewById(R.id.detailText);
         planDetails.setText(planItem.getDescribe());
 
-        Date date=planItem.getEndDate();
+        Date date=planItem.getBeginDate();
         TextView dateText = view.findViewById(R.id.timeText);
         if(date.equals(planItem.getBeginDate())) {
             dateText.setText("");
         }else{
             int year = date.getYear();
             int month = date.getMonth();
-            int day = date.getDay();
+            int day = date.getDate();
             int hour = date.getHours();
             int minute = date.getMinutes();
             final StringBuffer date_default = new StringBuffer();
             final StringBuffer time_default = new StringBuffer();
-            date_default.append(year + "年" + (month + 1) + "月" + day + "日");
+            date_default.append((year + 1900) + "年" + (month + 1) + "月" + day + "日");
             time_default.append(hour + "点" + minute + "分");
 
             dateText.setText(date_default.append(time_default));
