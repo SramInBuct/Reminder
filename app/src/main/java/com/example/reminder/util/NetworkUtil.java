@@ -29,7 +29,7 @@ public class NetworkUtil {
 
     public static final String WEA_URL ="http://47.117.116.187";
     public static final String WEATHER=":8777";
-    private static final String TAG ="OkHttpClient" ;
+    private static final String TAG ="OkHttpClient";
     private static String date="2021-04-18";
     private static String local ="101010100";
     private static String type="1";
